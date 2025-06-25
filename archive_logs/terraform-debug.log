@@ -1,0 +1,1089 @@
+2024-11-29T11:27:01.384+0100 [INFO]  Terraform version: 1.9.8
+2024-11-29T11:27:01.384+0100 [DEBUG] using github.com/hashicorp/go-tfe v1.58.0
+2024-11-29T11:27:01.384+0100 [DEBUG] using github.com/hashicorp/hcl/v2 v2.20.0
+2024-11-29T11:27:01.384+0100 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-11-29T11:27:01.384+0100 [DEBUG] using github.com/zclconf/go-cty v1.14.4
+2024-11-29T11:27:01.384+0100 [INFO]  Go runtime version: go1.22.7
+2024-11-29T11:27:01.384+0100 [INFO]  CLI args: []string{"terraform", "plan", "-out=plan.binary"}
+2024-11-29T11:27:01.384+0100 [DEBUG] Attempting to open CLI config file: /Users/jacek.podgorski/.terraformrc
+2024-11-29T11:27:01.384+0100 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-11-29T11:27:01.385+0100 [DEBUG] checking for credentials in "/Users/jacek.podgorski/.terraform.d/plugins"
+2024-11-29T11:27:01.385+0100 [DEBUG] checking for credentials in "/Users/jacek.podgorski/.terraform.d/plugins/darwin_amd64"
+2024-11-29T11:27:01.385+0100 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-11-29T11:27:01.385+0100 [DEBUG] will search for provider plugins in /Users/jacek.podgorski/.terraform.d/plugins
+2024-11-29T11:27:01.385+0100 [DEBUG] ignoring non-existing provider search directory /Users/jacek.podgorski/Library/Application Support/io.terraform/plugins
+2024-11-29T11:27:01.385+0100 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2024-11-29T11:27:01.386+0100 [INFO]  CLI command args: []string{"plan", "-out=plan.binary"}
+2024-11-29T11:27:03.844+0100 [DEBUG] checking for provisioner in "."
+2024-11-29T11:27:03.859+0100 [DEBUG] checking for provisioner in "/usr/local/bin"
+2024-11-29T11:27:03.859+0100 [DEBUG] checking for provisioner in "/Users/jacek.podgorski/.terraform.d/plugins"
+2024-11-29T11:27:03.859+0100 [DEBUG] checking for provisioner in "/Users/jacek.podgorski/.terraform.d/plugins/darwin_amd64"
+2024-11-29T11:27:03.861+0100 [INFO]  backend/local: starting Plan operation
+2024-11-29T11:27:03.877+0100 [DEBUG] created provider logger: level=debug
+2024-11-29T11:27:03.877+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-29T11:27:03.896+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5"]
+2024-11-29T11:27:03.950+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 pid=12660
+2024-11-29T11:27:03.950+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5
+2024-11-29T11:27:04.321+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Starting github.com/hashicorp/terraform-provider-aws@5.78.0 (go1.23.3)...
+2024-11-29T11:27:04.322+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Initializing Terraform AWS Provider...
+2024-11-29T11:27:04.370+0100 [INFO]  provider.terraform-provider-aws_v5.78.0_x5: configuring server automatic mTLS: timestamp="2024-11-29T11:27:04.370+0100"
+2024-11-29T11:27:04.386+0100 [DEBUG] provider: using plugin: version=5
+2024-11-29T11:27:04.386+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: plugin address: address=/var/folders/zx/14_tmj_d7q147vwx5c6q90q40000gp/T/plugin3719523801 network=unix timestamp="2024-11-29T11:27:04.386+0100"
+2024-11-29T11:27:05.584+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-11-29T11:27:05.601+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 id=12660
+2024-11-29T11:27:05.601+0100 [DEBUG] provider: plugin exited
+2024-11-29T11:27:05.601+0100 [DEBUG] Building and walking validate graph
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role.web_role" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.database.aws_kms_key.database" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_eip.nat" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_internet_gateway.main" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.compute.aws_key_pair.deployer" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.private" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.public" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_vpc.main" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_subnet_group.main" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group_rule.rds_ingress" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.compute.data.aws_ami.amazon_linux_2" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.private" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_nat_gateway.main" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_instance.main" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.public" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.604+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.public" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_autoscaling_group.web" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb.web" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_launch_template.web" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.private" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_parameter_group.main" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.web" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.alb" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group.web" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.networking.data.aws_availability_zones.available" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_target_group.web" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_instance_profile.web_profile" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_listener.web" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.605+0100 [DEBUG] ProviderTransformer: "module.database.aws_security_group.database" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_password (expand)" references: [var.database_password]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.alb" references: [module.compute.var.vpc_id (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.public" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_vpc.main module.networking.aws_internet_gateway.main]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.networking.var.vpc_cidr (expand)" references: [var.vpc_cidr]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.database.var.engine (expand)" references: [var.database_config]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.compute.output.alb_dns_name (expand)" references: [module.compute.aws_lb.web]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.networking.output.public_subnet_ids (expand)" references: [module.networking.aws_subnet.public]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_listener.web" references: [module.compute.aws_lb.web module.compute.aws_lb_target_group.web]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_internet_gateway.main" references: [module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "var.key_name" references: []
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "var.log_retention_days" references: []
+2024-11-29T11:27:05.608+0100 [DEBUG] ReferenceTransformer: "var.private_subnet_cidrs" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.networking.output.vpc_id (expand)" references: [module.networking.aws_vpc.main]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.security (expand)" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_security_group_id (expand)" references: [module.database.aws_security_group.database]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_eip.nat" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "var.public_subnet_cidrs" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.output.log_group_name (expand)" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.output.log_group_arn (expand)" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_endpoint (expand)" references: [module.database.aws_db_instance.main]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.security.output.web_security_group_id (expand)" references: [module.security.aws_security_group.web]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.application_name (expand)" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.compute (close)" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "output.public_subnet_ids (expand)" references: [module.networking.output.public_subnet_ids (expand)]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.var.subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.networking.var.private_subnet_cidrs (expand)" references: [var.private_subnet_cidrs]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.var.allocated_storage (expand)" references: [var.database_config]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_arn (expand)" references: [module.database.aws_db_instance.main]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.retention_days (expand)" references: [var.log_retention_days]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.compute.var.key_name (expand)" references: [var.key_name]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_username (expand)" references: [var.database_config]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.var.app_security_group_id (expand)" references: [module.compute.output.app_security_group_id (expand)]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.networking.var.public_subnet_cidrs (expand)" references: [var.public_subnet_cidrs]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "output.private_subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "var.database_password" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "output.database_endpoint (expand)" references: [module.database.output.db_instance_endpoint (expand)]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "var.instance_type" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database (close)" references: []
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.security.var.database_security_group_id (expand)" references: [module.database.output.db_security_group_id (expand)]
+2024-11-29T11:27:05.609+0100 [DEBUG] ReferenceTransformer: "module.database.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_target_group.web" references: [module.compute.var.environment (expand) module.compute.var.vpc_id (expand)]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_nat_gateway.main" references: [module.networking.aws_internet_gateway.main module.networking.var.public_subnet_cidrs (expand) module.networking.aws_subnet.public module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_eip.nat]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_id (expand)" references: [module.database.aws_db_instance.main]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.private" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.private_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.compute.var.subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_launch_template.web" references: [module.compute.var.instance_type (expand) module.compute.var.environment (expand) module.compute.data.aws_ami.amazon_linux_2 module.compute.var.db_host (expand) module.compute.var.db_name (expand) module.compute.var.db_username (expand) module.compute.var.db_password (expand) module.compute.aws_security_group.web module.compute.aws_iam_instance_profile.web_profile]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.database.aws_kms_key.database" references: [module.database.var.environment (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.database.var.engine_version (expand)" references: [var.database_config]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_vpc.main" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.vpc_cidr (expand)]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group.web" references: [module.security.var.environment (expand) module.security.var.environment (expand) module.security.var.environment (expand) module.security.var.vpc_id (expand)]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.database.var.backup_retention_period (expand)" references: []
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_instance_profile.web_profile" references: [module.compute.var.environment (expand) module.compute.aws_iam_role.web_role]
+2024-11-29T11:27:05.610+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.private" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_subnet.private module.networking.aws_route_table.private]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/aws\"]" references: [var.aws_region]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.compute.output.alb_security_group_id (expand)" references: [module.compute.aws_security_group.alb]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "output.alb_dns_name (expand)" references: [module.compute.output.alb_dns_name (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.security (close)" references: []
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.database.aws_security_group.database" references: [module.database.var.vpc_id (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.app_security_group_id (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_instance.main" references: [module.database.var.engine (expand) module.database.var.environment (expand) module.database.var.multi_az (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.database_name (expand) module.database.var.database_password (expand) module.database.aws_security_group.database module.database.aws_db_subnet_group.main module.database.var.instance_class (expand) module.database.aws_kms_key.database module.database.aws_db_parameter_group.main module.database.var.database_username (expand) module.database.var.engine_version (expand) module.database.var.allocated_storage (expand) module.database.var.environment (expand) module.database.var.backup_retention_period (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.security.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.networking (close)" references: []
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.compute.output.app_security_group_id (expand)" references: [module.compute.aws_security_group.web]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.networking (expand)" references: []
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.public" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "var.database_config" references: []
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_name (expand)" references: [var.database_config]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.networking.output.private_subnet_ids (expand)" references: [module.networking.aws_subnet.private]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb.web" references: [module.compute.aws_security_group.alb module.compute.var.subnet_ids (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_subnet_group.main" references: [module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.subnet_ids (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.compute.var.asg_config (expand)" references: [var.asg_config]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "var.asg_config" references: []
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.compute.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:05.611+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_username (expand)" references: [var.database_config]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch (close)" references: []
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.networking.data.aws_availability_zones.available" references: []
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group_rule.rds_ingress" references: [module.security.var.database_security_group_id (expand) module.security.aws_security_group.web]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.retention_days (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_password (expand)" references: [var.database_password]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.database (expand)" references: [module.networking.output.public_subnet_ids (expand) module.networking.output.vpc_id (expand) module.networking (close) module.networking (expand) module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role.web_role" references: [module.compute.var.environment (expand)]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.compute.data.aws_ami.amazon_linux_2" references: []
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "var.vpc_cidr" references: []
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.compute.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.compute (expand)" references: []
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_host (expand)" references: [module.database.output.db_instance_endpoint (expand)]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.database.var.instance_class (expand)" references: [var.database_config]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.database.var.multi_az (expand)" references: [var.database_config]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_key_pair.deployer" references: [module.compute.var.key_name (expand) module.compute.var.key_name (expand)]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.private" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_nat_gateway.main]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "output.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:05.612+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_parameter_group.main" references: [module.database.var.engine (expand) module.database.var.engine_version (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.security.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.compute.var.instance_type (expand)" references: [var.instance_type]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_name (expand)" references: [var.database_config]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.networking.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy" references: [module.compute.var.environment (expand) module.compute.aws_iam_role.web_role]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.public" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.aws_route_table.public module.networking.aws_subnet.public]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch (expand)" references: []
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.web" references: [module.compute.var.vpc_id (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.aws_security_group.alb]
+2024-11-29T11:27:05.613+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_autoscaling_group.web" references: [module.compute.aws_lb_target_group.web module.compute.var.environment (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.subnet_ids (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.aws_launch_template.web module.compute.var.environment (expand)]
+2024-11-29T11:27:05.621+0100 [DEBUG] Starting graph walk: walkValidate
+2024-11-29T11:27:05.622+0100 [DEBUG] created provider logger: level=debug
+2024-11-29T11:27:05.622+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-29T11:27:05.629+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5"]
+2024-11-29T11:27:05.673+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 pid=12661
+2024-11-29T11:27:05.674+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5
+2024-11-29T11:27:05.990+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Starting github.com/hashicorp/terraform-provider-aws@5.78.0 (go1.23.3)...
+2024-11-29T11:27:05.990+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Initializing Terraform AWS Provider...
+2024-11-29T11:27:06.042+0100 [INFO]  provider.terraform-provider-aws_v5.78.0_x5: configuring server automatic mTLS: timestamp="2024-11-29T11:27:06.041+0100"
+2024-11-29T11:27:06.058+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: plugin address: address=/var/folders/zx/14_tmj_d7q147vwx5c6q90q40000gp/T/plugin4160465494 network=unix timestamp="2024-11-29T11:27:06.058+0100"
+2024-11-29T11:27:06.058+0100 [DEBUG] provider: using plugin: version=5
+2024-11-29T11:27:06.228+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-11-29T11:27:06.241+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 id=12661
+2024-11-29T11:27:06.241+0100 [DEBUG] provider: plugin exited
+2024-11-29T11:27:06.241+0100 [INFO]  backend/local: plan calling Plan
+2024-11-29T11:27:06.241+0100 [DEBUG] Building and walking plan graph for NormalMode
+2024-11-29T11:27:06.249+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.private (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.249+0100 [DEBUG] ProviderTransformer: "module.compute.aws_key_pair.deployer (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.249+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group_rule.rds_ingress (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.250+0100 [DEBUG] ProviderTransformer: "module.networking.aws_vpc.main (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.250+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.250+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_target_group.web (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.250+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role.web_role (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.250+0100 [DEBUG] ProviderTransformer: "module.networking.aws_eip.nat (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.250+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.public (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.250+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.private (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_instance.main (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_subnet_group.main (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group.web (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.public (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.compute.aws_autoscaling_group.web (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.networking.aws_internet_gateway.main (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.networking.aws_nat_gateway.main (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.compute.aws_launch_template.web (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_listener.web (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.compute.data.aws_ami.amazon_linux_2 (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_instance_profile.web_profile (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.251+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb.web (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.web (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_parameter_group.main (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.database.aws_kms_key.database (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.networking.data.aws_availability_zones.available (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.private (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.public (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.alb (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.252+0100 [DEBUG] ProviderTransformer: "module.database.aws_security_group.database (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:06.255+0100 [DEBUG] ReferenceTransformer: "var.log_retention_days" references: []
+2024-11-29T11:27:06.255+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_password (expand)" references: [var.database_password]
+2024-11-29T11:27:06.255+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_instance_profile.web_profile (expand)" references: [module.compute.var.environment (expand) module.compute.aws_iam_role.web_role (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.alb (expand)" references: [module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.vpc_id (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_target_group.web (expand)" references: [module.compute.var.environment (expand) module.compute.var.vpc_id (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_username (expand)" references: [var.database_config]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.output.log_group_arn (expand)" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role.web_role (expand)" references: [module.compute.var.environment (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_eip.nat (expand)" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "var.public_subnet_cidrs" references: []
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy (expand)" references: [module.compute.aws_iam_role.web_role (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb.web (expand)" references: [module.compute.var.environment (expand) module.compute.aws_security_group.alb (expand) module.compute.var.subnet_ids (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_nat_gateway.main (expand)" references: [module.networking.aws_internet_gateway.main (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.aws_eip.nat (expand) module.networking.aws_subnet.public (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch (expand)" references: []
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.networking (expand)" references: []
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_launch_template.web (expand)" references: [module.compute.var.db_host (expand) module.compute.var.db_name (expand) module.compute.var.db_username (expand) module.compute.var.db_password (expand) module.compute.var.instance_type (expand) module.compute.var.environment (expand) module.compute.data.aws_ami.amazon_linux_2 (expand) module.compute.aws_security_group.web (expand) module.compute.aws_iam_instance_profile.web_profile (expand)]
+2024-11-29T11:27:06.256+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.private (expand)" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.var.private_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand) module.networking.aws_vpc.main (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group_rule.rds_ingress (expand)" references: [module.security.var.database_security_group_id (expand) module.security.aws_security_group.web (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.var.engine (expand)" references: [var.database_config]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.compute.var.instance_type (expand)" references: [var.instance_type]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.var.engine_version (expand)" references: [var.database_config]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "var.vpc_cidr" references: []
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.web (expand)" references: [module.compute.var.vpc_id (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.aws_security_group.alb (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_parameter_group.main (expand)" references: [module.database.var.engine (expand) module.database.var.engine_version (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_instance.main (expand)" references: [module.database.var.database_username (expand) module.database.var.environment (expand) module.database.aws_kms_key.database (expand) module.database.var.engine (expand) module.database.var.environment (expand) module.database.var.instance_class (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.backup_retention_period (expand) module.database.var.allocated_storage (expand) module.database.var.database_password (expand) module.database.aws_db_subnet_group.main (expand) module.database.var.multi_az (expand) module.database.aws_db_parameter_group.main (expand) module.database.var.engine_version (expand) module.database.var.database_name (expand) module.database.aws_security_group.database (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "var.private_subnet_cidrs" references: []
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.networking.var.public_subnet_cidrs (expand)" references: [var.public_subnet_cidrs]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.var.allocated_storage (expand)" references: [var.database_config]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "output.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/aws\"]" references: [var.aws_region]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "var.key_name" references: []
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.compute.var.subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.compute.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.aws_kms_key.database (expand)" references: [module.database.var.environment (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.database.var.instance_class (expand)" references: [var.database_config]
+2024-11-29T11:27:06.257+0100 [DEBUG] ReferenceTransformer: "module.compute.output.alb_security_group_id (expand)" references: [module.compute.aws_security_group.alb (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_endpoint (expand)" references: [module.database.aws_db_instance.main (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.security (close)" references: []
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.networking.output.public_subnet_ids (expand)" references: [module.networking.aws_subnet.public (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_subnet_group.main (expand)" references: [module.database.var.subnet_ids (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "var.database_config" references: []
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.security.output.web_security_group_id (expand)" references: [module.security.aws_security_group.web (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.output.log_group_name (expand)" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "output.public_subnet_ids (expand)" references: [module.networking.output.public_subnet_ids (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_autoscaling_group.web (expand)" references: [module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.aws_lb_target_group.web (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.environment (expand) module.compute.var.subnet_ids (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.aws_launch_template.web (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.security.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.networking.output.vpc_id (expand)" references: [module.networking.aws_vpc.main (expand)]
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch (close)" references: []
+2024-11-29T11:27:06.258+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm (expand)" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.private (expand)" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_subnet.private (expand) module.networking.aws_route_table.private (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_internet_gateway.main (expand)" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_vpc.main (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.networking.var.vpc_cidr (expand)" references: [var.vpc_cidr]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.database.var.backup_retention_period (expand)" references: []
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_security_group_id (expand)" references: [module.database.aws_security_group.database (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric (expand)" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.database (expand)" references: [module.networking (expand) module.networking.output.public_subnet_ids (expand) module.networking.output.vpc_id (expand) module.networking (close) module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.application_name (expand)" references: []
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.compute.var.asg_config (expand)" references: [var.asg_config]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.networking.var.private_subnet_cidrs (expand)" references: [var.private_subnet_cidrs]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "output.database_endpoint (expand)" references: [module.database.output.db_instance_endpoint (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.compute (expand)" references: []
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.public (expand)" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.aws_route_table.public (expand) module.networking.aws_subnet.public (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.compute.output.app_security_group_id (expand)" references: [module.compute.aws_security_group.web (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_id (expand)" references: [module.database.aws_db_instance.main (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_key_pair.deployer (expand)" references: [module.compute.var.key_name (expand) module.compute.var.key_name (expand)]
+2024-11-29T11:27:06.259+0100 [DEBUG] ReferenceTransformer: "module.database.aws_security_group.database (expand)" references: [module.database.var.vpc_id (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.app_security_group_id (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group.web (expand)" references: [module.security.var.vpc_id (expand) module.security.var.environment (expand) module.security.var.environment (expand) module.security.var.environment (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "var.database_password" references: []
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_name (expand)" references: [var.database_config]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.compute.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_vpc.main (expand)" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.vpc_cidr (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_host (expand)" references: [module.database.output.db_instance_endpoint (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.security.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "output.private_subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.networking (close)" references: []
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.retention_days (expand)" references: [var.log_retention_days]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_password (expand)" references: [var.database_password]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.database.var.app_security_group_id (expand)" references: [module.compute.output.app_security_group_id (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "output.alb_dns_name (expand)" references: [module.compute.output.alb_dns_name (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.database (close)" references: []
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_listener.web (expand)" references: [module.compute.aws_lb.web (expand) module.compute.aws_lb_target_group.web (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.public (expand)" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_vpc.main (expand) module.networking.aws_internet_gateway.main (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "var.asg_config" references: []
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.database.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_arn (expand)" references: [module.database.aws_db_instance.main (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.networking.data.aws_availability_zones.available (expand)" references: []
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.security.var.database_security_group_id (expand)" references: [module.database.output.db_security_group_id (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.database.var.multi_az (expand)" references: [var.database_config]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.private (expand)" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_vpc.main (expand) module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_nat_gateway.main (expand)]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_username (expand)" references: [var.database_config]
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.security (expand)" references: []
+2024-11-29T11:27:06.260+0100 [DEBUG] ReferenceTransformer: "module.networking.output.private_subnet_ids (expand)" references: [module.networking.aws_subnet.private (expand)]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)" references: [module.cloudwatch.var.retention_days (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "var.instance_type" references: []
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.networking.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.compute.output.alb_dns_name (expand)" references: [module.compute.aws_lb.web (expand)]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.public (expand)" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.aws_vpc.main (expand) module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand)]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_name (expand)" references: [var.database_config]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.database.var.subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.compute (close)" references: []
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.compute.var.key_name (expand)" references: [var.key_name]
+2024-11-29T11:27:06.261+0100 [DEBUG] ReferenceTransformer: "module.compute.data.aws_ami.amazon_linux_2 (expand)" references: []
+2024-11-29T11:27:06.274+0100 [DEBUG] Starting graph walk: walkPlan
+2024-11-29T11:27:06.276+0100 [DEBUG] created provider logger: level=debug
+2024-11-29T11:27:06.276+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-29T11:27:06.283+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5"]
+2024-11-29T11:27:06.328+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 pid=12662
+2024-11-29T11:27:06.328+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5
+2024-11-29T11:27:06.639+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Starting github.com/hashicorp/terraform-provider-aws@5.78.0 (go1.23.3)...
+2024-11-29T11:27:06.639+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Initializing Terraform AWS Provider...
+2024-11-29T11:27:06.686+0100 [INFO]  provider.terraform-provider-aws_v5.78.0_x5: configuring server automatic mTLS: timestamp="2024-11-29T11:27:06.686+0100"
+2024-11-29T11:27:06.702+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: plugin address: address=/var/folders/zx/14_tmj_d7q147vwx5c6q90q40000gp/T/plugin2633668027 network=unix timestamp="2024-11-29T11:27:06.702+0100"
+2024-11-29T11:27:06.702+0100 [DEBUG] provider: using plugin: version=5
+2024-11-29T11:27:06.842+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Configuring Terraform AWS Provider: tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-aws/internal/conns/config.go:144 @module=aws tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd tf_provider_addr=registry.terraform.io/hashicorp/aws timestamp="2024-11-29T11:27:06.842+0100"
+2024-11-29T11:27:06.842+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Resolving credentials provider: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:47 tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd @module=aws.aws-base tf_provider_addr=registry.terraform.io/hashicorp/aws tf_rpc=ConfigureProvider timestamp="2024-11-29T11:27:06.842+0100"
+2024-11-29T11:27:06.843+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Loading configuration: tf_mux_provider="*schema.GRPCProviderServer" @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:47 @module=aws.aws-base tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd tf_rpc=ConfigureProvider timestamp="2024-11-29T11:27:06.842+0100"
+2024-11-29T11:27:06.843+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `default2` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.843+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `raas-production` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.843+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `raas-production-2` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.843+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `realm-hub` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.843+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `realm-sandbox` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: For profile: default, overriding aws_access_key_id value, defined in /Users/jacek.podgorski/.aws/config with a aws_access_key_id value found in a duplicate profile defined at file /Users/jacek.podgorski/.aws/credentials. 
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5:  tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: For profile: default, overriding region value, defined in /Users/jacek.podgorski/.aws/config with a region value found in a duplicate profile defined at file /Users/jacek.podgorski/.aws/credentials. 
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5:  tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Retrieving credentials: @module=aws.aws-base tf_mux_provider="*schema.GRPCProviderServer" tf_provider_addr=registry.terraform.io/hashicorp/aws @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:47 tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd tf_rpc=ConfigureProvider timestamp="2024-11-29T11:27:06.844+0100"
+2024-11-29T11:27:06.844+0100 [INFO]  provider.terraform-provider-aws_v5.78.0_x5: Retrieved credentials: tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd tf_rpc=ConfigureProvider tf_aws.credentials_source="SharedConfigCredentials: /Users/jacek.podgorski/.aws/credentials" tf_mux_provider="*schema.GRPCProviderServer" @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:39 @module=aws.aws-base timestamp="2024-11-29T11:27:06.844+0100"
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Loading configuration: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:47 tf_mux_provider="*schema.GRPCProviderServer" tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd @module=aws.aws-base tf_rpc=ConfigureProvider timestamp="2024-11-29T11:27:06.844+0100"
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `default2` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `raas-production` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `raas-production-2` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `realm-hub` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: A profile defined with name `realm-sandbox` is ignored. For use within a shared configuration file, a non-default profile must have `profile ` prefixed to the profile name. tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: For profile: default, overriding aws_access_key_id value, defined in /Users/jacek.podgorski/.aws/config with a aws_access_key_id value found in a duplicate profile defined at file /Users/jacek.podgorski/.aws/credentials. 
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5:  tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] missing_context: For profile: default, overriding region value, defined in /Users/jacek.podgorski/.aws/config with a region value found in a duplicate profile defined at file /Users/jacek.podgorski/.aws/credentials. 
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5:  tf_aws.sdk=aws-sdk-go-v2
+2024-11-29T11:27:06.844+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Creating AWS SDK v1 session: @module=aws tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd @caller=github.com/hashicorp/terraform-provider-aws/internal/conns/config.go:168 tf_provider_addr=registry.terraform.io/hashicorp/aws tf_rpc=ConfigureProvider timestamp="2024-11-29T11:27:06.844+0100"
+2024-11-29T11:27:06.845+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Retrieving AWS account details: @module=aws @caller=github.com/hashicorp/terraform-provider-aws/internal/conns/config.go:183 tf_mux_provider="*schema.GRPCProviderServer" tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd tf_rpc=ConfigureProvider timestamp="2024-11-29T11:27:06.845+0100"
+2024-11-29T11:27:06.845+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: Retrieving caller identity from STS: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:47 @module=aws.aws-base tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd tf_rpc=ConfigureProvider tf_mux_provider="*schema.GRPCProviderServer" timestamp="2024-11-29T11:27:06.845+0100"
+2024-11-29T11:27:06.846+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: HTTP Request Sent: http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.8 (+https://www.terraform.io) terraform-provider-aws/5.78.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go-v2/1.32.5 os/macos lang/go#1.23.3 md/GOOS#darwin md/GOARCH#amd64 api/sts#1.33.1" rpc.system=aws-api tf_rpc=ConfigureProvider @module=aws.aws-base http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************BN4J/20241129/us-west-2/sts/aws4_request, SignedHeaders=amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-date, Signature=*****" rpc.method=GetCallerIdentity @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:47
+  http.request.body=
+  | Action=GetCallerIdentity&Version=2011-06-15
+   http.request.header.amz_sdk_invocation_id=46728016-e275-4d2d-aa25-05942759572b http.request.header.amz_sdk_request="attempt=1; max=25" http.url=https://sts.us-west-2.amazonaws.com/ net.peer.name=sts.us-west-2.amazonaws.com rpc.service=STS tf_aws.sdk=aws-sdk-go-v2 aws.region=us-west-2 http.request.header.content_type=application/x-www-form-urlencoded http.request.header.x_amz_date=20241129T102706Z http.request_content_length=43 tf_aws.signing_region="" tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd http.method=POST tf_mux_provider="*schema.GRPCProviderServer" timestamp="2024-11-29T11:27:06.846+0100"
+2024-11-29T11:27:08.310+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: HTTP Response Received: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:47 http.response.header.date="Fri, 29 Nov 2024 10:27:09 GMT" rpc.service=STS rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" @module=aws.aws-base
+  http.response.body=
+  | <GetCallerIdentityResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  |   <GetCallerIdentityResult>
+  |     <Arn>arn:aws:iam::953525353704:user/Jacek</Arn>
+  |     <UserId>AIDA*************VAFT</UserId>
+  |     <Account>953525353704</Account>
+  |   </GetCallerIdentityResult>
+  |   <ResponseMetadata>
+  |     <RequestId>c11ba2e0-6a3d-4ecc-ae4b-f969784e7440</RequestId>
+  |   </ResponseMetadata>
+  | </GetCallerIdentityResponse>
+   tf_provider_addr=registry.terraform.io/hashicorp/aws http.response_content_length=402 rpc.method=GetCallerIdentity http.response.header.x_amzn_requestid=c11ba2e0-6a3d-4ecc-ae4b-f969784e7440 http.status_code=200 tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd tf_rpc=ConfigureProvider aws.region=us-west-2 http.duration=1463 http.response.header.content_type=text/xml timestamp="2024-11-29T11:27:08.310+0100"
+2024-11-29T11:27:08.310+0100 [INFO]  provider.terraform-provider-aws_v5.78.0_x5: Retrieved caller identity from STS: @module=aws.aws-base tf_mux_provider="*schema.GRPCProviderServer" tf_req_id=1d7627b9-9c7e-3041-d28b-94e21d3923dd @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:39 tf_provider_addr=registry.terraform.io/hashicorp/aws tf_rpc=ConfigureProvider timestamp="2024-11-29T11:27:08.310+0100"
+2024-11-29T11:27:08.312+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_iam_role.web_role", instance module.compute.aws_iam_role.web_role
+2024-11-29T11:27:08.312+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role.web_role" references: []
+2024-11-29T11:27:08.312+0100 [DEBUG] Resource instance state not found for node "module.cloudwatch.aws_cloudwatch_log_group.app_logs", instance module.cloudwatch.aws_cloudwatch_log_group.app_logs
+2024-11-29T11:27:08.312+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs" references: []
+2024-11-29T11:27:08.313+0100 [DEBUG] Resource instance state not found for node "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm", instance module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm
+2024-11-29T11:27:08.313+0100 [DEBUG] refresh: module.compute.aws_iam_role.web_role: no state, so not refreshing
+2024-11-29T11:27:08.313+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm" references: []
+2024-11-29T11:27:08.313+0100 [DEBUG] Resource instance state not found for node "module.networking.data.aws_availability_zones.available", instance module.networking.data.aws_availability_zones.available
+2024-11-29T11:27:08.313+0100 [DEBUG] refresh: module.cloudwatch.aws_cloudwatch_log_group.app_logs: no state, so not refreshing
+2024-11-29T11:27:08.313+0100 [DEBUG] ReferenceTransformer: "module.networking.data.aws_availability_zones.available" references: []
+2024-11-29T11:27:08.313+0100 [DEBUG] Resource instance state not found for node "module.compute.data.aws_ami.amazon_linux_2", instance module.compute.data.aws_ami.amazon_linux_2
+2024-11-29T11:27:08.313+0100 [DEBUG] ReferenceTransformer: "module.compute.data.aws_ami.amazon_linux_2" references: []
+2024-11-29T11:27:08.314+0100 [DEBUG] refresh: module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm: no state, so not refreshing
+2024-11-29T11:27:08.314+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_key_pair.deployer", instance module.compute.aws_key_pair.deployer
+2024-11-29T11:27:08.314+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_key_pair.deployer" references: []
+2024-11-29T11:27:08.314+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_vpc.main", instance module.networking.aws_vpc.main
+2024-11-29T11:27:08.314+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_vpc.main" references: []
+2024-11-29T11:27:08.314+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_eip.nat[0]", instance module.networking.aws_eip.nat[0]
+2024-11-29T11:27:08.314+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_eip.nat[1]", instance module.networking.aws_eip.nat[1]
+2024-11-29T11:27:08.314+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_eip.nat[0]" references: []
+2024-11-29T11:27:08.314+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_eip.nat[1]" references: []
+2024-11-29T11:27:08.315+0100 [DEBUG] refresh: module.networking.aws_vpc.main: no state, so not refreshing
+2024-11-29T11:27:08.315+0100 [DEBUG] refresh: module.networking.aws_eip.nat[0]: no state, so not refreshing
+2024-11-29T11:27:08.315+0100 [DEBUG] refresh: module.compute.aws_key_pair.deployer: no state, so not refreshing
+2024-11-29T11:27:08.315+0100 [DEBUG] refresh: module.networking.aws_eip.nat[1]: no state, so not refreshing
+2024-11-29T11:27:08.330+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] Reading Availability Zones.
+2024-11-29T11:27:08.330+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: [DEBUG] Reading Availability Zones: 
+2024-11-29T11:27:08.332+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_key_pair.deployer, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .public_key: planned value cty.StringVal("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiJdN7kPNsPckHbx/YmDPpYWOBu5PM4jzPu0vEnJ3zk247HdBYD6WPTlR5MyL2dUm1fBcIYkmKTSNvRH/d1AFXz3UAwIwRjuFx4d+jdMKKiHKnZxlfQkyRcsiPiS0OEUZNN25VBNukW58+NVS3nww9KQ8swmG3encuS2Ws0irlTVLKWrwz/YPC8MJU0CY4Cm8kVCBPh2Om+jnq6h3SP0jSA1bSHdG6Pj/dgmGgheqz5+rkBR21ZMRmFCRJQE20oM2BTazdRJOo625G0fKe5y/evyomciChC8qmQ5I5O+i0Jqz0myErh8gEOc4MisSQNnwVbIvo9tRTSzg0pXecN/NDzaWcWlAvrwBsSMqGfZ89eJSlibGY0dE+kXcDbfa7HIDdyvn4tAy8rbj0AC+VAYo5d9PyKlOJ3FEfXh+63mCPE3s83vyzflr34DtukEKvFKE13IaN4s3sgrS/Py3LPU+AOkhlhcZmm8nPCBZg5p9MogAPskdHEal18K7Mk+zFYuADWzKxMRKSXZWJ3UfaRaXQs5P0W4DX4a4uE73XDK9NXsfb9K3EHhn/3LKanjqLIEhHsilV3zX+oCfPvjK+dAVYrUHrpPp7vOnw8AyuAzGnJGO8Csh+6XbPbbC7sPnvYr2JMPLQmnq3Ter7d5J2yknMWoIY2a+Bu4WMyPxID7Tznw== jacek.podgorski@M-C02ZD0LNLVDR") does not match config value cty.StringVal("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiJdN7kPNsPckHbx/YmDPpYWOBu5PM4jzPu0vEnJ3zk247HdBYD6WPTlR5MyL2dUm1fBcIYkmKTSNvRH/d1AFXz3UAwIwRjuFx4d+jdMKKiHKnZxlfQkyRcsiPiS0OEUZNN25VBNukW58+NVS3nww9KQ8swmG3encuS2Ws0irlTVLKWrwz/YPC8MJU0CY4Cm8kVCBPh2Om+jnq6h3SP0jSA1bSHdG6Pj/dgmGgheqz5+rkBR21ZMRmFCRJQE20oM2BTazdRJOo625G0fKe5y/evyomciChC8qmQ5I5O+i0Jqz0myErh8gEOc4MisSQNnwVbIvo9tRTSzg0pXecN/NDzaWcWlAvrwBsSMqGfZ89eJSlibGY0dE+kXcDbfa7HIDdyvn4tAy8rbj0AC+VAYo5d9PyKlOJ3FEfXh+63mCPE3s83vyzflr34DtukEKvFKE13IaN4s3sgrS/Py3LPU+AOkhlhcZmm8nPCBZg5p9MogAPskdHEal18K7Mk+zFYuADWzKxMRKSXZWJ3UfaRaXQs5P0W4DX4a4uE73XDK9NXsfb9K3EHhn/3LKanjqLIEhHsilV3zX+oCfPvjK+dAVYrUHrpPp7vOnw8AyuAzGnJGO8Csh+6XbPbbC7sPnvYr2JMPLQmnq3Ter7d5J2yknMWoIY2a+Bu4WMyPxID7Tznw== jacek.podgorski@M-C02ZD0LNLVDR\n")
+2024-11-29T11:27:08.332+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: HTTP Request Sent:
+  http.request.body=
+  | Action=DescribeAvailabilityZones&Filter.1.Name=state&Filter.1.Value.1=available&Version=2016-11-15
+   @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:45 http.method=POST net.peer.name=ec2.us-west-2.amazonaws.com tf_aws.sdk=aws-sdk-go-v2 tf_mux_provider="*schema.GRPCProviderServer" http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.8 (+https://www.terraform.io) terraform-provider-aws/5.78.0 (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go-v2/1.32.5 os/macos lang/go#1.23.3 md/GOOS#darwin md/GOARCH#amd64 api/ec2#1.193.0" tf_provider_addr=registry.terraform.io/hashicorp/aws http.url=https://ec2.us-west-2.amazonaws.com/ http.request.header.content_type=application/x-www-form-urlencoded http.request.header.x_amz_date=20241129T102708Z http.request.header.amz_sdk_invocation_id=d03e6a93-d99c-4872-9a36-27e3692e9c91 http.request_content_length=98 tf_rpc=ReadDataSource @module=aws rpc.system=aws-api tf_data_source_type=aws_availability_zones http.request.header.amz_sdk_request="attempt=1; max=25" aws.region=us-west-2 http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************BN4J/20241129/us-west-2/ec2/aws4_request, SignedHeaders=amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-date, Signature=*****" rpc.method=DescribeAvailabilityZones rpc.service=EC2 tf_aws.signing_region="" tf_req_id=92e68bdd-78eb-25ab-79d4-46e1f818007f timestamp="2024-11-29T11:27:08.332+0100"
+2024-11-29T11:27:08.332+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.cloudwatch.aws_cloudwatch_log_group.app_logs, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .skip_destroy: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:08.333+0100 [DEBUG] Resource instance state not found for node "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric", instance module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric
+2024-11-29T11:27:08.333+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_iam_role.web_role, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .force_detach_policies: planned value cty.False for a non-computed attribute
+      - .path: planned value cty.StringVal("/") for a non-computed attribute
+      - .max_session_duration: planned value cty.NumberIntVal(3600) for a non-computed attribute
+      - .inline_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-11-29T11:27:08.333+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric" references: []
+2024-11-29T11:27:08.334+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: HTTP Request Sent: tf_provider_addr=registry.terraform.io/hashicorp/aws net.peer.name=ec2.us-west-2.amazonaws.com tf_data_source_type=aws_ami tf_rpc=ReadDataSource http.request.header.amz_sdk_invocation_id=2dd10f3e-34bc-41e7-b28b-adf29612c75a http.request.header.x_amz_date=20241129T102708Z http.url=https://ec2.us-west-2.amazonaws.com/ rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 @module=aws http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA************BN4J/20241129/us-west-2/ec2/aws4_request, SignedHeaders=amz-sdk-invocation-id;amz-sdk-request;content-length;content-type;host;x-amz-date, Signature=*****" rpc.method=DescribeImages rpc.service=EC2 http.user_agent="APN/1.0 HashiCorp/1.0 Terraform/1.9.8 (+https://www.terraform.io) terraform-provider-aws/5.78.0 (+https://registry.terraform.io/providers/hashicorp/aws) m/C aws-sdk-go-v2/1.32.5 os/macos lang/go#1.23.3 md/GOOS#darwin md/GOARCH#amd64 api/ec2#1.193.0" tf_aws.signing_region="" tf_mux_provider="*schema.GRPCProviderServer" aws.region=us-west-2 http.request.header.content_type=application/x-www-form-urlencoded http.request_content_length=199 @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:45 http.method=POST http.request.header.amz_sdk_request="attempt=1; max=25" tf_req_id=5d0f34a6-5e21-fd99-ed93-4bd5706c5390
+  http.request.body=
+  | Action=DescribeImages&Filter.1.Name=name&Filter.1.Value.1=amzn2-ami-hvm-%2A-x86_64-gp2&Filter.2.Name=virtualization-type&Filter.2.Value.1=hvm&IncludeDeprecated=false&Owner.1=amazon&Version=2016-11-15
+   timestamp="2024-11-29T11:27:08.334+0100"
+2024-11-29T11:27:08.334+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_iam_instance_profile.web_profile", instance module.compute.aws_iam_instance_profile.web_profile
+2024-11-29T11:27:08.334+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_instance_profile.web_profile" references: []
+2024-11-29T11:27:08.335+0100 [DEBUG] refresh: module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric: no state, so not refreshing
+2024-11-29T11:27:08.335+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_vpc.main, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .instance_tenancy: planned value cty.StringVal("default") for a non-computed attribute
+2024-11-29T11:27:08.335+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_iam_role_policy.cloudwatch_policy", instance module.compute.aws_iam_role_policy.cloudwatch_policy
+2024-11-29T11:27:08.335+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy" references: []
+2024-11-29T11:27:08.336+0100 [DEBUG] refresh: module.compute.aws_iam_instance_profile.web_profile: no state, so not refreshing
+2024-11-29T11:27:08.336+0100 [DEBUG] refresh: module.compute.aws_iam_role_policy.cloudwatch_policy: no state, so not refreshing
+2024-11-29T11:27:08.336+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_internet_gateway.main", instance module.networking.aws_internet_gateway.main
+2024-11-29T11:27:08.336+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_internet_gateway.main" references: []
+2024-11-29T11:27:08.337+0100 [DEBUG] refresh: module.networking.aws_internet_gateway.main: no state, so not refreshing
+2024-11-29T11:27:08.337+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .actions_enabled: planned value cty.True for a non-computed attribute
+      - .treat_missing_data: planned value cty.StringVal("missing") for a non-computed attribute
+2024-11-29T11:27:08.337+0100 [DEBUG] Resource instance state not found for node "module.security.aws_security_group.web", instance module.security.aws_security_group.web
+2024-11-29T11:27:08.338+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group.web" references: []
+2024-11-29T11:27:08.338+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_security_group.alb", instance module.compute.aws_security_group.alb
+2024-11-29T11:27:08.338+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.alb" references: []
+2024-11-29T11:27:08.338+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_lb_target_group.web", instance module.compute.aws_lb_target_group.web
+2024-11-29T11:27:08.339+0100 [DEBUG] refresh: module.security.aws_security_group.web: no state, so not refreshing
+2024-11-29T11:27:08.339+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_target_group.web" references: []
+2024-11-29T11:27:08.339+0100 [DEBUG] refresh: module.compute.aws_security_group.alb: no state, so not refreshing
+2024-11-29T11:27:08.339+0100 [DEBUG] refresh: module.compute.aws_lb_target_group.web: no state, so not refreshing
+2024-11-29T11:27:08.340+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .metric_transformation[0].unit: planned value cty.StringVal("None") for a non-computed attribute
+2024-11-29T11:27:08.340+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_iam_role_policy.cloudwatch_policy, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .policy: planned value cty.StringVal("{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\",\"logs:DescribeLogStreams\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:logs:*:*:*\"]}]}") does not match config value cty.StringVal("{\"Statement\":[{\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\",\"logs:DescribeLogStreams\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:logs:*:*:*\"]}],\"Version\":\"2012-10-17\"}")
+2024-11-29T11:27:08.341+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_route_table.public", instance module.networking.aws_route_table.public
+2024-11-29T11:27:08.341+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_iam_instance_profile.web_profile, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .path: planned value cty.StringVal("/") for a non-computed attribute
+2024-11-29T11:27:08.341+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.public" references: []
+2024-11-29T11:27:08.341+0100 [DEBUG] refresh: module.networking.aws_route_table.public: no state, so not refreshing
+2024-11-29T11:27:08.345+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_security_group.alb, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .description: planned value cty.StringVal("Managed by Terraform") for a non-computed attribute
+      - .ingress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(80), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(80)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(80), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(80)})})
+      - .revoke_rules_on_delete: planned value cty.False for a non-computed attribute
+      - .egress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("-1"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(0)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("-1"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(0)})})
+2024-11-29T11:27:08.345+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_route_table.public, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .route: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.StringVal(""), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.StringVal(""), "destination_prefix_list_id":cty.StringVal(""), "egress_only_gateway_id":cty.StringVal(""), "gateway_id":cty.UnknownVal(cty.String), "ipv6_cidr_block":cty.StringVal(""), "local_gateway_id":cty.StringVal(""), "nat_gateway_id":cty.StringVal(""), "network_interface_id":cty.StringVal(""), "transit_gateway_id":cty.StringVal(""), "vpc_endpoint_id":cty.StringVal(""), "vpc_peering_connection_id":cty.StringVal("")})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.NullVal(cty.String), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.NullVal(cty.String), "destination_prefix_list_id":cty.NullVal(cty.String), "egress_only_gateway_id":cty.NullVal(cty.String), "gateway_id":cty.UnknownVal(cty.String), "ipv6_cidr_block":cty.NullVal(cty.String), "local_gateway_id":cty.NullVal(cty.String), "nat_gateway_id":cty.NullVal(cty.String), "network_interface_id":cty.NullVal(cty.String), "transit_gateway_id":cty.NullVal(cty.String), "vpc_endpoint_id":cty.NullVal(cty.String), "vpc_peering_connection_id":cty.NullVal(cty.String)})})
+2024-11-29T11:27:08.345+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_lb_target_group.web, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .deregistration_delay: planned value cty.StringVal("300") for a non-computed attribute
+      - .lambda_multi_value_headers_enabled: planned value cty.False for a non-computed attribute
+      - .target_type: planned value cty.StringVal("instance") for a non-computed attribute
+      - .proxy_protocol_v2: planned value cty.False for a non-computed attribute
+      - .slow_start: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .target_group_health: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .target_health_state: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .stickiness: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .target_failover: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-11-29T11:27:08.346+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.security.aws_security_group.web, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .ingress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(22), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(22)}), cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(80), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(80)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(22), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(22)}), cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(80), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(80)})})
+      - .description: planned value cty.StringVal("Managed by Terraform") for a non-computed attribute
+      - .revoke_rules_on_delete: planned value cty.False for a non-computed attribute
+      - .egress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("-1"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(0)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("-1"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(0)})})
+2024-11-29T11:27:08.346+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_security_group.web", instance module.compute.aws_security_group.web
+2024-11-29T11:27:08.346+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.web" references: []
+2024-11-29T11:27:08.346+0100 [DEBUG] refresh: module.compute.aws_security_group.web: no state, so not refreshing
+2024-11-29T11:27:08.352+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_security_group.web, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .description: planned value cty.StringVal("Managed by Terraform") for a non-computed attribute
+      - .ingress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListValEmpty(cty.String), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(80), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.UnknownVal(cty.Set(cty.String)), "self":cty.False, "to_port":cty.NumberIntVal(80)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.NullVal(cty.List(cty.String)), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(80), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetVal([]cty.Value{cty.UnknownVal(cty.String)}), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(80)})})
+      - .egress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("-1"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(0)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("-1"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(0)})})
+      - .revoke_rules_on_delete: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.334+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: HTTP Response Received: @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:45
+  http.response.body=
+  | <?xml version="1.0" encoding="UTF-8"?>
+  | <DescribeAvailabilityZonesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+  |     <requestId>e819f553-08e2-43e3-b86d-080e3f691663</requestId>
+  |     <availabilityZoneInfo>
+  |         <item>
+  |             <zoneName>us-west-2a</zoneName>
+  |             <zoneId>usw2-az1</zoneId>
+  |             <zoneState>available</zoneState>
+  |             <regionName>us-west-2</regionName>
+  |             <groupName>us-west-2</groupName>
+  |             <optInStatus>opt-in-not-required</optInStatus>
+  |             <networkBorderGroup>us-west-2</networkBorderGroup>
+  |             <zoneType>availability-zone</zoneType>
+  |             <messageSet/>
+  |         </item>
+  |         <item>
+  |             <zoneName>us-west-2b</zoneName>
+  |             <zoneId>usw2-az2</zoneId>
+  |             <zoneState>available</zoneState>
+  |             <regionName>us-west-2</regionName>
+  |             <groupName>us-west-2</groupName>
+  |             <optInStatus>opt-in-not-required</optInStatus>
+  |             <networkBorderGroup>us-west-2</networkBorderGroup>
+  |             <zoneType>availability-zone</zoneType>
+  |             <messageSet/>
+  |         </item>
+  |         <item>
+  |             <zoneName>us-west-2c</zoneName>
+  |             <zoneId>usw2-az3</zoneId>
+  |             <zoneState>available</zoneState>
+  |             <regionName>us-west-2</regionName>
+  |             <groupName>us-west-2</groupName>
+  |             <optInStatus>opt-in-not-required</optInStatus>
+  |             <networkBorderGroup>us-west-2</networkBorderGroup>
+  |             <zoneType>availability-zone</zoneType>
+  |             <messageSet/>
+  |         </item>
+  |         <item>
+  |             <zoneName>us-west-2d</zoneName>
+  |             <zoneId>usw2-az4</zoneId>
+  |             <zoneState>available</zoneState>
+  |             <regionName>us-west-2</regionName>
+  |             <groupName>us-west-2</groupName>
+  |             <optInStatus>opt-in-not-required</optInStatus>
+  |             <networkBorderGroup>us-west-2</networkBorderGroup>
+  |             <zoneType>availability-zone</zoneType>
+  |             <messageSet/>
+  |         </item>
+  |     </availabilityZoneInfo>
+  | </DescribeAvailabilityZonesResponse>
+   http.response.header.date="Fri, 29 Nov 2024 10:27:11 GMT" http.response.header.server=AmazonEC2 rpc.method=DescribeAvailabilityZones tf_provider_addr=registry.terraform.io/hashicorp/aws tf_req_id=92e68bdd-78eb-25ab-79d4-46e1f818007f tf_rpc=ReadDataSource aws.region=us-west-2 http.response.header.cache_control="no-cache, no-store" http.response.header.vary=accept-encoding @module=aws http.duration=1001 http.response.header.content_type=text/xml;charset=UTF-8 http.response.header.strict_transport_security="max-age=31536000; includeSubDomains" http.response.header.x_amzn_requestid=e819f553-08e2-43e3-b86d-080e3f691663 rpc.service=EC2 tf_mux_provider="*schema.GRPCProviderServer" http.status_code=200 rpc.system=aws-api tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region="" tf_data_source_type=aws_availability_zones timestamp="2024-11-29T11:27:09.333+0100"
+2024-11-29T11:27:09.335+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_subnet.private[0]", instance module.networking.aws_subnet.private[0]
+2024-11-29T11:27:09.335+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_subnet.private[1]", instance module.networking.aws_subnet.private[1]
+2024-11-29T11:27:09.336+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.private[1]" references: []
+2024-11-29T11:27:09.336+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.private[0]" references: []
+2024-11-29T11:27:09.336+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_subnet.public[1]", instance module.networking.aws_subnet.public[1]
+2024-11-29T11:27:09.336+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_subnet.public[0]", instance module.networking.aws_subnet.public[0]
+2024-11-29T11:27:09.336+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.public[0]" references: []
+2024-11-29T11:27:09.336+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.public[1]" references: []
+2024-11-29T11:27:09.336+0100 [DEBUG] refresh: module.networking.aws_subnet.private[1]: no state, so not refreshing
+2024-11-29T11:27:09.337+0100 [DEBUG] refresh: module.networking.aws_subnet.public[1]: no state, so not refreshing
+2024-11-29T11:27:09.337+0100 [DEBUG] refresh: module.networking.aws_subnet.private[0]: no state, so not refreshing
+2024-11-29T11:27:09.337+0100 [DEBUG] refresh: module.networking.aws_subnet.public[0]: no state, so not refreshing
+2024-11-29T11:27:09.341+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_subnet.public[0], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .map_public_ip_on_launch: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.341+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_subnet.public[1], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .map_public_ip_on_launch: planned value cty.False for a non-computed attribute
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.341+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_subnet.private[1], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+      - .map_public_ip_on_launch: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.341+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_subnet.private[0], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .enable_resource_name_dns_a_record_on_launch: planned value cty.False for a non-computed attribute
+      - .enable_dns64: planned value cty.False for a non-computed attribute
+      - .enable_resource_name_dns_aaaa_record_on_launch: planned value cty.False for a non-computed attribute
+      - .ipv6_native: planned value cty.False for a non-computed attribute
+      - .assign_ipv6_address_on_creation: planned value cty.False for a non-computed attribute
+      - .map_public_ip_on_launch: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.342+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_route_table_association.public[1]", instance module.networking.aws_route_table_association.public[1]
+2024-11-29T11:27:09.342+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_route_table_association.public[0]", instance module.networking.aws_route_table_association.public[0]
+2024-11-29T11:27:09.342+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.public[0]" references: []
+2024-11-29T11:27:09.342+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.public[1]" references: []
+2024-11-29T11:27:09.342+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_nat_gateway.main[1]", instance module.networking.aws_nat_gateway.main[1]
+2024-11-29T11:27:09.342+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_nat_gateway.main[0]", instance module.networking.aws_nat_gateway.main[0]
+2024-11-29T11:27:09.342+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_nat_gateway.main[0]" references: []
+2024-11-29T11:27:09.342+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_nat_gateway.main[1]" references: []
+2024-11-29T11:27:09.342+0100 [DEBUG] refresh: module.networking.aws_route_table_association.public[0]: no state, so not refreshing
+2024-11-29T11:27:09.343+0100 [DEBUG] refresh: module.networking.aws_route_table_association.public[1]: no state, so not refreshing
+2024-11-29T11:27:09.343+0100 [DEBUG] refresh: module.networking.aws_nat_gateway.main[1]: no state, so not refreshing
+2024-11-29T11:27:09.343+0100 [DEBUG] refresh: module.networking.aws_nat_gateway.main[0]: no state, so not refreshing
+2024-11-29T11:27:09.343+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_lb.web", instance module.compute.aws_lb.web
+2024-11-29T11:27:09.344+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb.web" references: []
+2024-11-29T11:27:09.344+0100 [DEBUG] refresh: module.compute.aws_lb.web: no state, so not refreshing
+2024-11-29T11:27:09.346+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_nat_gateway.main[0], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .connectivity_type: planned value cty.StringVal("public") for a non-computed attribute
+2024-11-29T11:27:09.346+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_nat_gateway.main[1], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .connectivity_type: planned value cty.StringVal("public") for a non-computed attribute
+2024-11-29T11:27:09.347+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_route_table.private[0]", instance module.networking.aws_route_table.private[0]
+2024-11-29T11:27:09.347+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_route_table.private[1]", instance module.networking.aws_route_table.private[1]
+2024-11-29T11:27:09.347+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.private[1]" references: []
+2024-11-29T11:27:09.347+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.private[0]" references: []
+2024-11-29T11:27:09.347+0100 [DEBUG] refresh: module.networking.aws_route_table.private[0]: no state, so not refreshing
+2024-11-29T11:27:09.347+0100 [DEBUG] refresh: module.networking.aws_route_table.private[1]: no state, so not refreshing
+2024-11-29T11:27:09.349+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_lb.web, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .client_keep_alive: planned value cty.NumberIntVal(3600) for a non-computed attribute
+      - .enable_tls_version_and_cipher_suite_headers: planned value cty.False for a non-computed attribute
+      - .idle_timeout: planned value cty.NumberIntVal(60) for a non-computed attribute
+      - .security_groups: planned value cty.UnknownVal(cty.Set(cty.String)) does not match config value cty.SetVal([]cty.Value{cty.UnknownVal(cty.String)})
+      - .enable_deletion_protection: planned value cty.False for a non-computed attribute
+      - .enable_waf_fail_open: planned value cty.False for a non-computed attribute
+      - .xff_header_processing_mode: planned value cty.StringVal("append") for a non-computed attribute
+      - .desync_mitigation_mode: planned value cty.StringVal("defensive") for a non-computed attribute
+      - .preserve_host_header: planned value cty.False for a non-computed attribute
+      - .subnets: planned value cty.UnknownVal(cty.Set(cty.String)) does not match config value cty.SetVal([]cty.Value{cty.UnknownVal(cty.String), cty.UnknownVal(cty.String)})
+      - .enable_http2: planned value cty.True for a non-computed attribute
+      - .enable_xff_client_port: planned value cty.False for a non-computed attribute
+      - .drop_invalid_header_fields: planned value cty.False for a non-computed attribute
+      - .subnet_mapping: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-11-29T11:27:09.350+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_lb_listener.web", instance module.compute.aws_lb_listener.web
+2024-11-29T11:27:09.350+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_listener.web" references: []
+2024-11-29T11:27:09.350+0100 [DEBUG] refresh: module.compute.aws_lb_listener.web: no state, so not refreshing
+2024-11-29T11:27:09.351+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_route_table.private[1], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .route: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.StringVal(""), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.StringVal(""), "destination_prefix_list_id":cty.StringVal(""), "egress_only_gateway_id":cty.StringVal(""), "gateway_id":cty.StringVal(""), "ipv6_cidr_block":cty.StringVal(""), "local_gateway_id":cty.StringVal(""), "nat_gateway_id":cty.UnknownVal(cty.String), "network_interface_id":cty.StringVal(""), "transit_gateway_id":cty.StringVal(""), "vpc_endpoint_id":cty.StringVal(""), "vpc_peering_connection_id":cty.StringVal("")})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.NullVal(cty.String), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.NullVal(cty.String), "destination_prefix_list_id":cty.NullVal(cty.String), "egress_only_gateway_id":cty.NullVal(cty.String), "gateway_id":cty.NullVal(cty.String), "ipv6_cidr_block":cty.NullVal(cty.String), "local_gateway_id":cty.NullVal(cty.String), "nat_gateway_id":cty.UnknownVal(cty.String), "network_interface_id":cty.NullVal(cty.String), "transit_gateway_id":cty.NullVal(cty.String), "vpc_endpoint_id":cty.NullVal(cty.String), "vpc_peering_connection_id":cty.NullVal(cty.String)})})
+2024-11-29T11:27:09.351+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.networking.aws_route_table.private[0], but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .route: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.StringVal(""), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.StringVal(""), "destination_prefix_list_id":cty.StringVal(""), "egress_only_gateway_id":cty.StringVal(""), "gateway_id":cty.StringVal(""), "ipv6_cidr_block":cty.StringVal(""), "local_gateway_id":cty.StringVal(""), "nat_gateway_id":cty.UnknownVal(cty.String), "network_interface_id":cty.StringVal(""), "transit_gateway_id":cty.StringVal(""), "vpc_endpoint_id":cty.StringVal(""), "vpc_peering_connection_id":cty.StringVal("")})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"carrier_gateway_id":cty.NullVal(cty.String), "cidr_block":cty.StringVal("0.0.0.0/0"), "core_network_arn":cty.NullVal(cty.String), "destination_prefix_list_id":cty.NullVal(cty.String), "egress_only_gateway_id":cty.NullVal(cty.String), "gateway_id":cty.NullVal(cty.String), "ipv6_cidr_block":cty.NullVal(cty.String), "local_gateway_id":cty.NullVal(cty.String), "nat_gateway_id":cty.UnknownVal(cty.String), "network_interface_id":cty.NullVal(cty.String), "transit_gateway_id":cty.NullVal(cty.String), "vpc_endpoint_id":cty.NullVal(cty.String), "vpc_peering_connection_id":cty.NullVal(cty.String)})})
+2024-11-29T11:27:09.352+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_route_table_association.private[0]", instance module.networking.aws_route_table_association.private[0]
+2024-11-29T11:27:09.352+0100 [DEBUG] Resource instance state not found for node "module.networking.aws_route_table_association.private[1]", instance module.networking.aws_route_table_association.private[1]
+2024-11-29T11:27:09.352+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.private[0]" references: []
+2024-11-29T11:27:09.352+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.private[1]" references: []
+2024-11-29T11:27:09.352+0100 [DEBUG] refresh: module.networking.aws_route_table_association.private[0]: no state, so not refreshing
+2024-11-29T11:27:09.352+0100 [DEBUG] refresh: module.networking.aws_route_table_association.private[1]: no state, so not refreshing
+2024-11-29T11:27:09.355+0100 [DEBUG] Resource instance state not found for node "module.database.aws_db_subnet_group.main", instance module.database.aws_db_subnet_group.main
+2024-11-29T11:27:09.355+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_lb_listener.web, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .mutual_authentication: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-11-29T11:27:09.355+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_subnet_group.main" references: []
+2024-11-29T11:27:09.356+0100 [DEBUG] Resource instance state not found for node "module.database.aws_security_group.database", instance module.database.aws_security_group.database
+2024-11-29T11:27:09.356+0100 [DEBUG] ReferenceTransformer: "module.database.aws_security_group.database" references: []
+2024-11-29T11:27:09.356+0100 [DEBUG] refresh: module.database.aws_db_subnet_group.main: no state, so not refreshing
+2024-11-29T11:27:09.356+0100 [DEBUG] Resource instance state not found for node "module.database.aws_kms_key.database", instance module.database.aws_kms_key.database
+2024-11-29T11:27:09.356+0100 [DEBUG] ReferenceTransformer: "module.database.aws_kms_key.database" references: []
+2024-11-29T11:27:09.356+0100 [DEBUG] Resource instance state not found for node "module.database.aws_db_parameter_group.main", instance module.database.aws_db_parameter_group.main
+2024-11-29T11:27:09.356+0100 [DEBUG] refresh: module.database.aws_security_group.database: no state, so not refreshing
+2024-11-29T11:27:09.357+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_parameter_group.main" references: []
+2024-11-29T11:27:09.357+0100 [DEBUG] refresh: module.database.aws_kms_key.database: no state, so not refreshing
+2024-11-29T11:27:09.357+0100 [DEBUG] refresh: module.database.aws_db_parameter_group.main: no state, so not refreshing
+2024-11-29T11:27:09.358+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.database.aws_db_subnet_group.main, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .subnet_ids: planned value cty.UnknownVal(cty.Set(cty.String)) does not match config value cty.SetVal([]cty.Value{cty.UnknownVal(cty.String), cty.UnknownVal(cty.String)})
+2024-11-29T11:27:09.359+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.database.aws_kms_key.database, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .bypass_policy_lockout_safety_check: planned value cty.False for a non-computed attribute
+      - .is_enabled: planned value cty.True for a non-computed attribute
+      - .customer_master_key_spec: planned value cty.StringVal("SYMMETRIC_DEFAULT") for a non-computed attribute
+      - .key_usage: planned value cty.StringVal("ENCRYPT_DECRYPT") for a non-computed attribute
+2024-11-29T11:27:09.360+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.database.aws_db_parameter_group.main, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .skip_destroy: planned value cty.False for a non-computed attribute
+      - .description: planned value cty.StringVal("Managed by Terraform") for a non-computed attribute
+2024-11-29T11:27:09.362+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.database.aws_security_group.database, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .ingress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListValEmpty(cty.String), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(5432), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("tcp"), "security_groups":cty.UnknownVal(cty.Set(cty.String)), "self":cty.False, "to_port":cty.NumberIntVal(5432)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.NullVal(cty.List(cty.String)), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(5432), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("tcp"), "security_groups":cty.SetVal([]cty.Value{cty.UnknownVal(cty.String)}), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(5432)})})
+      - .description: planned value cty.StringVal("Managed by Terraform") for a non-computed attribute
+      - .egress: planned value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.StringVal(""), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.ListValEmpty(cty.String), "prefix_list_ids":cty.ListValEmpty(cty.String), "protocol":cty.StringVal("-1"), "security_groups":cty.SetValEmpty(cty.String), "self":cty.False, "to_port":cty.NumberIntVal(0)})}) does not match config value cty.SetVal([]cty.Value{cty.ObjectVal(map[string]cty.Value{"cidr_blocks":cty.ListVal([]cty.Value{cty.StringVal("0.0.0.0/0")}), "description":cty.NullVal(cty.String), "from_port":cty.NumberIntVal(0), "ipv6_cidr_blocks":cty.NullVal(cty.List(cty.String)), "prefix_list_ids":cty.NullVal(cty.List(cty.String)), "protocol":cty.StringVal("-1"), "security_groups":cty.NullVal(cty.Set(cty.String)), "self":cty.NullVal(cty.Bool), "to_port":cty.NumberIntVal(0)})})
+      - .revoke_rules_on_delete: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.362+0100 [DEBUG] Resource instance state not found for node "module.database.aws_db_instance.main", instance module.database.aws_db_instance.main
+2024-11-29T11:27:09.363+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_instance.main" references: []
+2024-11-29T11:27:09.363+0100 [DEBUG] refresh: module.database.aws_db_instance.main: no state, so not refreshing
+2024-11-29T11:27:09.363+0100 [DEBUG] Resource instance state not found for node "module.security.aws_security_group_rule.rds_ingress", instance module.security.aws_security_group_rule.rds_ingress
+2024-11-29T11:27:09.364+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group_rule.rds_ingress" references: []
+2024-11-29T11:27:09.364+0100 [DEBUG] refresh: module.security.aws_security_group_rule.rds_ingress: no state, so not refreshing
+2024-11-29T11:27:09.366+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.security.aws_security_group_rule.rds_ingress, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .self: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.372+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.database.aws_db_instance.main, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .monitoring_interval: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .maintenance_window: planned value cty.StringVal("mon:04:00-mon:05:00") does not match config value cty.StringVal("Mon:04:00-Mon:05:00")
+      - .dedicated_log_volume: planned value cty.False for a non-computed attribute
+      - .vpc_security_group_ids: planned value cty.UnknownVal(cty.Set(cty.String)) does not match config value cty.SetVal([]cty.Value{cty.UnknownVal(cty.String)})
+      - .delete_automated_backups: planned value cty.True for a non-computed attribute
+      - .publicly_accessible: planned value cty.False for a non-computed attribute
+      - .copy_tags_to_snapshot: planned value cty.False for a non-computed attribute
+      - .performance_insights_enabled: planned value cty.False for a non-computed attribute
+      - .apply_immediately: planned value cty.False for a non-computed attribute
+2024-11-29T11:27:09.660+0100 [DEBUG] provider.terraform-provider-aws_v5.78.0_x5: HTTP Response Received: http.response.header.date="Fri, 29 Nov 2024 10:27:11 GMT" http.response.header.vary=accept-encoding http.status_code=200 tf_aws.sdk=aws-sdk-go-v2 tf_provider_addr=registry.terraform.io/hashicorp/aws @caller=github.com/hashicorp/aws-sdk-go-base/v2@v2.0.0-beta.59/logging/tf_logger.go:45 tf_req_id=5d0f34a6-5e21-fd99-ed93-4bd5706c5390 http.response.header.server=AmazonEC2 tf_aws.signing_region="" tf_data_source_type=aws_ami aws.region=us-west-2
+  http.response.body=
+  | <?xml version="1.0" encoding="UTF-8"?>
+  | <DescribeImagesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+  |     <requestId>a8c1f5ad-99a8-4423-9faf-1695ad751b33</requestId>
+  |     <imagesSet>
+  |         <item>
+  |             <imageId>ami-00755a52896316cee</imageId>
+  |             <imageLocation>amazon/amzn2-ami-hvm-2.0.20230912.0-x86_64-gp2</imageLocation>
+  |             <imageState>available</imageState>
+  |             <imageOwnerId>137112412989</imageOwnerId>
+  |             <creationDate>2023-09-12T23:50:02.000Z</creationDate>
+  |             <isPublic>true</isPublic>
+  |             <architecture>x86_64</architecture>
+  |             <imageType>machine</imageType>
+  |             <sriovNetSupport>simple</sriovNetSupport>
+  |             <imageOwnerAlias>amazon</imageOwnerAlias>
+  |             <name>amzn2-ami-hvm-2.0.20230912.0-x86_64-gp2</name>
+  |             <description>Amazon Linux 2 AMI 2.0.20230912.0 x86_64 HVM gp2</description>
+  |             <rootDeviceType>ebs</rootDeviceType>
+  |             <rootDeviceName>/dev/xvda</rootDeviceName>
+  |             <blockDeviceMapping>
+  |                 <item>
+  |                     <deviceName>/dev/xvda</deviceName>
+  |                     <ebs>
+  |                         <snapshotId>snap-0c376e87ee27479a5</snapshotId>
+  |                         <volumeSize>8</volumeSize>
+  |                         <deleteOnTermination>true</deleteOnTermination>
+  |                         <volumeType>gp2</volumeType>
+  |                         <encrypted>false</encrypted>
+  |                     </ebs>
+  |                 </item>
+  |             </blockDeviceMapping>
+  |             <virtualizationType>hvm</virtualizationType>
+  |             <hypervisor>xen</hypervisor>
+  |             <enaSupport>true</enaSupport>
+  |             <platformDetails>Linux/UNIX</platformDetails>
+  |             <usageOperation>RunInstances</usageOperation>
+  |             <deprecationTime>2025-07-01T00:00:00.000Z</deprecationTime>
+  |         </item>
+  |         <item>
+  |             <imageId>ami-0033f83482a4826f7</imageId>
+  |             <imageLocation>amazon/amzn2-ami-hvm-2.0.20230530.0-x86_64-gp2</imageLocation>
+  |             <imageState>available</imageState>
+  |             <imageOwnerId>137112412989</imageOwnerId>
+  |             <creationDate>2023-06-02T19:40:40.000Z</creationDate>
+  |             <isPublic>true</isPublic>
+  |             <architecture>x86_64</architecture>
+  |             <imageType>machine</imageType>
+  |             <sriovNetSupport>simple</sriovNetSupport>
+  |             <imageOwnerAlias>amazon</imageOwnerAlias>
+  |             <name>amzn2-ami-hvm-2.0.20230530.0-x86_64-gp2</name>
+  |             <description>Amazon Linux 2 AMI 2.0.20230530.0 x86_64 HVM gp2</description>
+  |             <rootDeviceType>ebs</rootDeviceType>
+  |             <rootDeviceName>/dev/xvda</rootDeviceName>
+  |             <blockDeviceMapping>
+  |                 <item>
+  |                     <deviceName>/dev/xvda</deviceName>
+  |                     <ebs>
+  |                         <snapshotId>snap-082efcebfd0ca07ed</snapshotId>
+  |                         <volumeSize>8</volumeSize>
+  |                         <deleteOnTermination>true</deleteOnTermination>
+  |                         <volumeType>gp2</volumeType>
+  |                         <encrypted>false</encrypted>
+  |                     </ebs>
+  |                 </item>
+  |             </blockDeviceMapping>
+  |             <virtualizationType>hvm</virtualizationType>
+  |             <hypervisor>xen</hypervisor>
+  |             <enaSupport>true</enaSupport>
+  |             <platformDetails>Linux/UNIX</platformDetails>
+  |             <usageOperation>RunInstances</usageOperation>
+  |             <deprecationTime>2025-06-02T19:40:00.000Z</deprecationTime>
+  |         </item>
+  |         <item>
+  |             <imageId>ami-0025f0db847eb6254</imageId>
+  |             <imageLocation>amazon/amzn2-ami-hvm-2.0.20231012.1-x86_64-gp2</imageLocation>
+  |             <imageState>available</imageState>
+  |             <imageOwnerId>137112412989</imageOwnerId>
+  |             <creationDate>2023-10-13T23:43:46.000Z</creationDate>
+  |             <isPublic>true</isPublic>
+  |             <architecture>x86_64</architecture>
+  |             <imageType>machine</imageType>
+  |             <sriovNetSupport>simple</sriovNetSupport>
+  |             <imageOwnerAlias>amazon</imageOwnerAlias>
+  | [truncated...]
+   http.response.header.cache_control="no-cache, no-store" http.response.header.content_type=text/xml;charset=UTF-8 tf_mux_provider="*schema.GRPCProviderServer" @module=aws http.duration=1307 http.response.header.x_amzn_requestid=a8c1f5ad-99a8-4423-9faf-1695ad751b33 rpc.method=DescribeImages rpc.service=EC2 rpc.system=aws-api tf_rpc=ReadDataSource http.response.header.strict_transport_security="max-age=31536000; includeSubDomains" timestamp="2024-11-29T11:27:09.660+0100"
+2024-11-29T11:27:09.666+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_launch_template.web", instance module.compute.aws_launch_template.web
+2024-11-29T11:27:09.667+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_launch_template.web" references: []
+2024-11-29T11:27:09.667+0100 [DEBUG] refresh: module.compute.aws_launch_template.web: no state, so not refreshing
+2024-11-29T11:27:09.679+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_launch_template.web, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .metadata_options: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .network_interfaces[0].security_groups: planned value cty.UnknownVal(cty.Set(cty.String)) does not match config value cty.SetVal([]cty.Value{cty.UnknownVal(cty.String)})
+2024-11-29T11:27:09.680+0100 [DEBUG] Resource instance state not found for node "module.compute.aws_autoscaling_group.web", instance module.compute.aws_autoscaling_group.web
+2024-11-29T11:27:09.680+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_autoscaling_group.web" references: []
+2024-11-29T11:27:09.680+0100 [DEBUG] refresh: module.compute.aws_autoscaling_group.web: no state, so not refreshing
+2024-11-29T11:27:09.691+0100 [WARN]  Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for module.compute.aws_autoscaling_group.web, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .metrics_granularity: planned value cty.StringVal("1Minute") for a non-computed attribute
+      - .ignore_failed_scaling_activities: planned value cty.False for a non-computed attribute
+      - .force_delete_warm_pool: planned value cty.False for a non-computed attribute
+      - .wait_for_capacity_timeout: planned value cty.StringVal("10m") for a non-computed attribute
+      - .vpc_zone_identifier: planned value cty.UnknownVal(cty.Set(cty.String)) does not match config value cty.SetVal([]cty.Value{cty.UnknownVal(cty.String), cty.UnknownVal(cty.String)})
+      - .force_delete: planned value cty.False for a non-computed attribute
+      - .target_group_arns: planned value cty.UnknownVal(cty.Set(cty.String)) does not match config value cty.SetVal([]cty.Value{cty.UnknownVal(cty.String)})
+      - .mixed_instances_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .traffic_source: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-11-29T11:27:09.693+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-11-29T11:27:09.705+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/hashicorp/aws/5.78.0/darwin_amd64/terraform-provider-aws_v5.78.0_x5 id=12662
+2024-11-29T11:27:09.705+0100 [DEBUG] provider: plugin exited
+2024-11-29T11:27:09.708+0100 [DEBUG] building apply graph to check for errors
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.compute.aws_security_group.web", instance module.compute.aws_security_group.web
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.networking.aws_route_table_association.public[1]", instance module.networking.aws_route_table_association.public[1]
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.networking.aws_route_table_association.public[0]", instance module.networking.aws_route_table_association.public[0]
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.security.aws_security_group_rule.rds_ingress", instance module.security.aws_security_group_rule.rds_ingress
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.networking.aws_subnet.public[0]", instance module.networking.aws_subnet.public[0]
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.database.aws_db_instance.main", instance module.database.aws_db_instance.main
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.compute.aws_lb.web", instance module.compute.aws_lb.web
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.networking.aws_internet_gateway.main", instance module.networking.aws_internet_gateway.main
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.networking.aws_route_table.public", instance module.networking.aws_route_table.public
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.compute.aws_autoscaling_group.web", instance module.compute.aws_autoscaling_group.web
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm", instance module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.compute.aws_lb_listener.web", instance module.compute.aws_lb_listener.web
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.networking.aws_route_table_association.private[1]", instance module.networking.aws_route_table_association.private[1]
+2024-11-29T11:27:09.711+0100 [DEBUG] Resource state not found for node "module.compute.aws_iam_instance_profile.web_profile", instance module.compute.aws_iam_instance_profile.web_profile
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.compute.aws_launch_template.web", instance module.compute.aws_launch_template.web
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.database.aws_db_subnet_group.main", instance module.database.aws_db_subnet_group.main
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.compute.aws_iam_role_policy.cloudwatch_policy", instance module.compute.aws_iam_role_policy.cloudwatch_policy
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_subnet.public[1]", instance module.networking.aws_subnet.public[1]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_nat_gateway.main[1]", instance module.networking.aws_nat_gateway.main[1]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.database.aws_security_group.database", instance module.database.aws_security_group.database
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.compute.aws_lb_target_group.web", instance module.compute.aws_lb_target_group.web
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.cloudwatch.aws_cloudwatch_log_group.app_logs", instance module.cloudwatch.aws_cloudwatch_log_group.app_logs
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_route_table.private[0]", instance module.networking.aws_route_table.private[0]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric", instance module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.database.aws_db_parameter_group.main", instance module.database.aws_db_parameter_group.main
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_eip.nat[1]", instance module.networking.aws_eip.nat[1]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.compute.aws_security_group.alb", instance module.compute.aws_security_group.alb
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_route_table.private[1]", instance module.networking.aws_route_table.private[1]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_subnet.private[0]", instance module.networking.aws_subnet.private[0]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_eip.nat[0]", instance module.networking.aws_eip.nat[0]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_vpc.main", instance module.networking.aws_vpc.main
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_subnet.private[1]", instance module.networking.aws_subnet.private[1]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_route_table_association.private[0]", instance module.networking.aws_route_table_association.private[0]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.compute.aws_iam_role.web_role", instance module.compute.aws_iam_role.web_role
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.security.aws_security_group.web", instance module.security.aws_security_group.web
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.networking.aws_nat_gateway.main[0]", instance module.networking.aws_nat_gateway.main[0]
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.compute.aws_key_pair.deployer", instance module.compute.aws_key_pair.deployer
+2024-11-29T11:27:09.712+0100 [DEBUG] Resource state not found for node "module.database.aws_kms_key.database", instance module.database.aws_kms_key.database
+2024-11-29T11:27:09.715+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_subnet_group.main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_instance_profile.web_profile (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.data.aws_ami.amazon_linux_2 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_target_group.web (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_eip.nat[1]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb.web" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_listener.web (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.public" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_nat_gateway.main[0]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_key_pair.deployer (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.public[0]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_eip.nat[0]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.public[1]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_autoscaling_group.web" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.database.aws_kms_key.database (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_vpc.main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_parameter_group.main" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group.web" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.private[0]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role.web_role" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_instance.main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.web (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.716+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.alb" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.private[1]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_nat_gateway.main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role.web_role (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group.web (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.compute.aws_launch_template.web (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.private (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_internet_gateway.main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.compute.aws_autoscaling_group.web (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.database.aws_security_group.database (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.database.aws_kms_key.database" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.web" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_instance.main" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_target_group.web" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.data.aws_availability_zones.available (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb_listener.web" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_nat_gateway.main[1]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.database.aws_security_group.database" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_vpc.main" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_subnet_group.main" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.private[0]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.public[0]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.717+0100 [DEBUG] ProviderTransformer: "module.networking.aws_internet_gateway.main" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group_rule.rds_ingress (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.private (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.database.aws_db_parameter_group.main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.compute.aws_key_pair.deployer" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.public (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.security.aws_security_group_rule.rds_ingress" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.compute.aws_launch_template.web" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.private[1]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.private (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.compute.aws_iam_instance_profile.web_profile" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table.public (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.private[0]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.compute.aws_security_group.alb (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.public (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_route_table_association.private[1]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_subnet.public[1]" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.compute.aws_lb.web (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.718+0100 [DEBUG] ProviderTransformer: "module.networking.aws_eip.nat (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_password (expand)" references: [var.database_password]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "output.database_endpoint (expand)" references: [module.database.output.db_instance_endpoint (expand)]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.public[1]" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.aws_subnet.public[0] module.networking.aws_subnet.public[1] module.networking.aws_subnet.public (expand) module.networking.aws_route_table.public module.networking.aws_route_table.public module.networking.aws_route_table.public (expand)]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.public[0]" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.aws_route_table.public module.networking.aws_route_table.public module.networking.aws_route_table.public (expand) module.networking.aws_subnet.public[0] module.networking.aws_subnet.public[1] module.networking.aws_subnet.public (expand)]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group_rule.rds_ingress" references: [module.security.var.database_security_group_id (expand) module.security.aws_security_group.web (expand) module.security.aws_security_group.web module.security.aws_security_group.web]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_instance_profile.web_profile (expand)" references: [module.compute.var.environment (expand) module.compute.aws_iam_role.web_role (expand) module.compute.aws_iam_role.web_role module.compute.aws_iam_role.web_role]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.private (expand)" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.private_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_name (expand)" references: [var.database_config]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "output.public_subnet_ids (expand)" references: [module.networking.output.public_subnet_ids (expand)]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.public[0]" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.public_subnet_cidrs (expand)]
+2024-11-29T11:27:09.725+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_instance.main" references: [module.database.var.engine (expand) module.database.var.instance_class (expand) module.database.aws_db_parameter_group.main module.database.aws_db_parameter_group.main module.database.aws_db_parameter_group.main (expand) module.database.var.engine_version (expand) module.database.var.database_name (expand) module.database.var.environment (expand) module.database.aws_db_subnet_group.main module.database.aws_db_subnet_group.main module.database.aws_db_subnet_group.main (expand) module.database.var.environment (expand) module.database.var.multi_az (expand) module.database.var.database_username (expand) module.database.var.database_password (expand) module.database.aws_security_group.database module.database.aws_security_group.database module.database.aws_security_group.database (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.aws_kms_key.database (expand) module.database.aws_kms_key.database module.database.aws_kms_key.database module.database.var.backup_retention_period (expand) module.database.var.allocated_storage (expand)]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.security (expand)" references: []
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.compute.data.aws_ami.amazon_linux_2 (expand)" references: []
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.public (expand)" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.aws_route_table.public module.networking.aws_route_table.public module.networking.aws_route_table.public (expand) module.networking.aws_subnet.public[0] module.networking.aws_subnet.public[1] module.networking.aws_subnet.public (expand)]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_password (expand)" references: [var.database_password]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_endpoint (expand)" references: [module.database.aws_db_instance.main module.database.aws_db_instance.main module.database.aws_db_instance.main (expand)]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.networking (expand)" references: []
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb.web" references: [module.compute.aws_security_group.alb module.compute.aws_security_group.alb module.compute.aws_security_group.alb (expand) module.compute.var.subnet_ids (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group_rule.rds_ingress (expand)" references: [module.security.var.database_security_group_id (expand) module.security.aws_security_group.web (expand) module.security.aws_security_group.web module.security.aws_security_group.web]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "var.instance_type" references: []
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.compute.output.alb_dns_name (expand)" references: [module.compute.aws_lb.web module.compute.aws_lb.web module.compute.aws_lb.web (expand)]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.compute.output.alb_security_group_id (expand)" references: [module.compute.aws_security_group.alb module.compute.aws_security_group.alb module.compute.aws_security_group.alb (expand)]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_internet_gateway.main" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main]
+2024-11-29T11:27:09.726+0100 [DEBUG] ReferenceTransformer: "module.database.var.backup_retention_period (expand)" references: []
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.public" references: [module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main (expand)]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_autoscaling_group.web" references: [module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.environment (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.aws_lb_target_group.web (expand) module.compute.aws_lb_target_group.web module.compute.aws_lb_target_group.web module.compute.var.subnet_ids (expand) module.compute.aws_launch_template.web module.compute.aws_launch_template.web module.compute.aws_launch_template.web (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.database.aws_kms_key.database (expand)" references: [module.database.var.environment (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.database.var.allocated_storage (expand)" references: [var.database_config]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_listener.web" references: [module.compute.aws_lb.web module.compute.aws_lb.web module.compute.aws_lb.web (expand) module.compute.aws_lb_target_group.web (expand) module.compute.aws_lb_target_group.web module.compute.aws_lb_target_group.web]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.private (expand)" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.aws_nat_gateway.main[1] module.networking.aws_nat_gateway.main (expand) module.networking.aws_nat_gateway.main[0]]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.private[1]" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_route_table.private (expand) module.networking.aws_route_table.private[0] module.networking.aws_route_table.private[1] module.networking.aws_subnet.private (expand) module.networking.aws_subnet.private[0] module.networking.aws_subnet.private[1]]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.database.var.app_security_group_id (expand)" references: [module.compute.output.app_security_group_id (expand)]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_instance_profile.web_profile" references: [module.compute.var.environment (expand) module.compute.aws_iam_role.web_role (expand) module.compute.aws_iam_role.web_role module.compute.aws_iam_role.web_role]
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.networking (close)" references: []
+2024-11-29T11:27:09.727+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch (close)" references: []
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_vpc.main (expand)" references: [module.networking.var.vpc_cidr (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.security.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.application_name (expand)" references: []
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.database.var.multi_az (expand)" references: [var.database_config]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_launch_template.web" references: [module.compute.data.aws_ami.amazon_linux_2 (expand) module.compute.var.db_host (expand) module.compute.var.db_name (expand) module.compute.var.db_username (expand) module.compute.var.db_password (expand) module.compute.var.environment (expand) module.compute.var.instance_type (expand) module.compute.aws_security_group.web (expand) module.compute.aws_security_group.web module.compute.aws_security_group.web module.compute.aws_iam_instance_profile.web_profile (expand) module.compute.aws_iam_instance_profile.web_profile module.compute.aws_iam_instance_profile.web_profile]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_metric_alarm.error_alarm (expand)" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "var.log_retention_days" references: []
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "output.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "var.database_config" references: []
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "var.public_subnet_cidrs" references: []
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.database.var.database_username (expand)" references: [var.database_config]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_subnet_group.main" references: [module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.subnet_ids (expand)]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/aws\"]" references: [var.aws_region]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "var.key_name" references: []
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "var.database_password" references: []
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.security.output.web_security_group_id (expand)" references: [module.security.aws_security_group.web (expand) module.security.aws_security_group.web module.security.aws_security_group.web]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "output.private_subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy" references: [module.compute.aws_iam_role.web_role (expand) module.compute.aws_iam_role.web_role module.compute.aws_iam_role.web_role module.compute.var.environment (expand)]
+2024-11-29T11:27:09.728+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_target_group.web (expand)" references: [module.compute.var.vpc_id (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.compute.var.instance_type (expand)" references: [var.instance_type]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.public[1]" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_nat_gateway.main[1]" references: [module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_eip.nat[1] module.networking.aws_eip.nat[0] module.networking.aws_eip.nat (expand) module.networking.aws_subnet.public[0] module.networking.aws_subnet.public[1] module.networking.aws_subnet.public (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.database.aws_security_group.database" references: [module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.vpc_id (expand) module.database.var.app_security_group_id (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_nat_gateway.main (expand)" references: [module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.aws_eip.nat[1] module.networking.aws_eip.nat[0] module.networking.aws_eip.nat (expand) module.networking.aws_subnet.public[0] module.networking.aws_subnet.public[1] module.networking.aws_subnet.public (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.database.var.subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.output.log_group_name (expand)" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_target_group.web" references: [module.compute.var.environment (expand) module.compute.var.vpc_id (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group.web (expand)" references: [module.security.var.vpc_id (expand) module.security.var.environment (expand) module.security.var.environment (expand) module.security.var.environment (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role.web_role (expand)" references: [module.compute.var.environment (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_instance.main (expand)" references: [module.database.aws_security_group.database module.database.aws_security_group.database module.database.aws_security_group.database (expand) module.database.var.multi_az (expand) module.database.var.engine_version (expand) module.database.var.instance_class (expand) module.database.var.database_name (expand) module.database.var.backup_retention_period (expand) module.database.aws_db_subnet_group.main module.database.aws_db_subnet_group.main module.database.aws_db_subnet_group.main (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.aws_kms_key.database (expand) module.database.aws_kms_key.database module.database.aws_kms_key.database module.database.aws_db_parameter_group.main module.database.aws_db_parameter_group.main module.database.aws_db_parameter_group.main (expand) module.database.var.database_password (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.database_username (expand) module.database.var.allocated_storage (expand) module.database.var.engine (expand)]
+2024-11-29T11:27:09.729+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_internet_gateway.main (expand)" references: [module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb.web (expand)" references: [module.compute.aws_security_group.alb module.compute.aws_security_group.alb module.compute.aws_security_group.alb (expand) module.compute.var.subnet_ids (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.networking.data.aws_availability_zones.available (expand)" references: []
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_arn (expand)" references: [module.database.aws_db_instance.main module.database.aws_db_instance.main module.database.aws_db_instance.main (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.retention_days (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)" references: [module.cloudwatch.var.retention_days (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.database.aws_security_group.database (expand)" references: [module.database.var.vpc_id (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.app_security_group_id (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.compute.var.subnet_ids (expand)" references: [module.networking.output.private_subnet_ids (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role_policy.cloudwatch_policy (expand)" references: [module.compute.aws_iam_role.web_role (expand) module.compute.aws_iam_role.web_role module.compute.aws_iam_role.web_role module.compute.var.environment (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.compute.var.key_name (expand)" references: [var.key_name]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.compute.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.networking.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.security.var.database_security_group_id (expand)" references: [module.database.output.db_security_group_id (expand)]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.compute.var.asg_config (expand)" references: [var.asg_config]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.networking.output.vpc_id (expand)" references: [module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.private[0]" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.aws_nat_gateway.main[1] module.networking.aws_nat_gateway.main (expand) module.networking.aws_nat_gateway.main[0]]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.compute (expand)" references: []
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.networking.var.public_subnet_cidrs (expand)" references: [var.public_subnet_cidrs]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.networking.output.private_subnet_ids (expand)" references: [module.networking.aws_subnet.private (expand) module.networking.aws_subnet.private[0] module.networking.aws_subnet.private[1]]
+2024-11-29T11:27:09.730+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.web (expand)" references: [module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.vpc_id (expand) module.compute.aws_security_group.alb module.compute.aws_security_group.alb module.compute.aws_security_group.alb (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_host (expand)" references: [module.database.output.db_instance_endpoint (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.compute.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.database.var.vpc_id (expand)" references: [module.networking.output.vpc_id (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_parameter_group.main" references: [module.database.var.engine (expand) module.database.var.engine_version (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_autoscaling_group.web (expand)" references: [module.compute.var.asg_config (expand) module.compute.var.subnet_ids (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.environment (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.var.asg_config (expand) module.compute.aws_lb_target_group.web (expand) module.compute.aws_lb_target_group.web module.compute.aws_lb_target_group.web module.compute.aws_launch_template.web module.compute.aws_launch_template.web module.compute.aws_launch_template.web (expand) module.compute.var.environment (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_username (expand)" references: [var.database_config]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_eip.nat[1]" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.database (expand)" references: [module.networking (expand) module.networking (close) module.networking.output.vpc_id (expand) module.networking.output.private_subnet_ids (expand) module.networking.output.public_subnet_ids (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.database (close)" references: []
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.alb" references: [module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.vpc_id (expand)]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.private[1]" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_nat_gateway.main[1] module.networking.aws_nat_gateway.main (expand) module.networking.aws_nat_gateway.main[0]]
+2024-11-29T11:27:09.731+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_lb_listener.web (expand)" references: [module.compute.aws_lb.web module.compute.aws_lb.web module.compute.aws_lb.web (expand) module.compute.aws_lb_target_group.web (expand) module.compute.aws_lb_target_group.web module.compute.aws_lb_target_group.web]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table.public (expand)" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main (expand)]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.private (expand)" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_route_table.private (expand) module.networking.aws_route_table.private[0] module.networking.aws_route_table.private[1] module.networking.aws_subnet.private (expand) module.networking.aws_subnet.private[0] module.networking.aws_subnet.private[1]]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "var.vpc_cidr" references: []
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.output.log_group_arn (expand)" references: [module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand)]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.aws_cloudwatch_log_metric_filter.error_metric (expand)" references: [module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs module.cloudwatch.aws_cloudwatch_log_group.app_logs (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand) module.cloudwatch.var.environment (expand) module.cloudwatch.var.application_name (expand)]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.var.private_subnet_cidrs (expand)" references: [var.private_subnet_cidrs]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.compute.output.app_security_group_id (expand)" references: [module.compute.aws_security_group.web (expand) module.compute.aws_security_group.web module.compute.aws_security_group.web]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.private[0]" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.private_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand)]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.database.var.engine_version (expand)" references: [var.database_config]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.database.var.engine (expand)" references: [var.database_config]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_eip.nat[0]" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_vpc.main" references: [module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.vpc_cidr (expand)]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.private[1]" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand) module.networking.var.private_subnet_cidrs (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_route_table_association.private[0]" references: [module.networking.var.private_subnet_cidrs (expand) module.networking.aws_route_table.private (expand) module.networking.aws_route_table.private[0] module.networking.aws_route_table.private[1] module.networking.aws_subnet.private (expand) module.networking.aws_subnet.private[0] module.networking.aws_subnet.private[1]]
+2024-11-29T11:27:09.732+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_subnet_group.main (expand)" references: [module.database.var.environment (expand) module.database.var.environment (expand) module.database.var.subnet_ids (expand) module.database.var.environment (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.database.aws_db_parameter_group.main (expand)" references: [module.database.var.engine (expand) module.database.var.engine_version (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_eip.nat (expand)" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.database.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.database.var.instance_class (expand)" references: [var.database_config]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_launch_template.web (expand)" references: [module.compute.var.db_host (expand) module.compute.var.db_name (expand) module.compute.var.db_username (expand) module.compute.var.db_password (expand) module.compute.var.instance_type (expand) module.compute.var.environment (expand) module.compute.data.aws_ami.amazon_linux_2 (expand) module.compute.aws_security_group.web (expand) module.compute.aws_security_group.web module.compute.aws_security_group.web module.compute.aws_iam_instance_profile.web_profile (expand) module.compute.aws_iam_instance_profile.web_profile module.compute.aws_iam_instance_profile.web_profile]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "var.private_subnet_cidrs" references: []
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "var.asg_config" references: []
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch (expand)" references: []
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_iam_role.web_role" references: [module.compute.var.environment (expand)]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.security.aws_security_group.web" references: [module.security.var.environment (expand) module.security.var.environment (expand) module.security.var.vpc_id (expand) module.security.var.environment (expand)]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_nat_gateway.main[0]" references: [module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main module.networking.aws_internet_gateway.main (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.aws_eip.nat[1] module.networking.aws_eip.nat[0] module.networking.aws_eip.nat (expand) module.networking.aws_subnet.public[0] module.networking.aws_subnet.public[1] module.networking.aws_subnet.public (expand) module.networking.var.environment (expand) module.networking.var.environment (expand)]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.networking.aws_subnet.public (expand)" references: [module.networking.var.public_subnet_cidrs (expand) module.networking.var.environment (expand) module.networking.var.environment (expand) module.networking.var.public_subnet_cidrs (expand) module.networking.data.aws_availability_zones.available (expand) module.networking.aws_vpc.main (expand) module.networking.aws_vpc.main module.networking.aws_vpc.main]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.cloudwatch.var.retention_days (expand)" references: [var.log_retention_days]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.networking.var.vpc_cidr (expand)" references: [var.vpc_cidr]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_security_group_id (expand)" references: [module.database.aws_security_group.database module.database.aws_security_group.database module.database.aws_security_group.database (expand)]
+2024-11-29T11:27:09.733+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_key_pair.deployer" references: [module.compute.var.key_name (expand) module.compute.var.key_name (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.compute (close)" references: []
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.alb (expand)" references: [module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.vpc_id (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.security.var.environment (expand)" references: [var.environment]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.compute.var.db_name (expand)" references: [var.database_config]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "output.alb_dns_name (expand)" references: [module.compute.output.alb_dns_name (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.database.aws_kms_key.database" references: [module.database.var.environment (expand) module.database.var.environment (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_key_pair.deployer (expand)" references: [module.compute.var.key_name (expand) module.compute.var.key_name (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.database.output.db_instance_id (expand)" references: [module.database.aws_db_instance.main module.database.aws_db_instance.main module.database.aws_db_instance.main (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.networking.output.public_subnet_ids (expand)" references: [module.networking.aws_subnet.public[0] module.networking.aws_subnet.public[1] module.networking.aws_subnet.public (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.compute.aws_security_group.web" references: [module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.environment (expand) module.compute.var.vpc_id (expand) module.compute.aws_security_group.alb module.compute.aws_security_group.alb module.compute.aws_security_group.alb (expand)]
+2024-11-29T11:27:09.734+0100 [DEBUG] ReferenceTransformer: "module.security (close)" references: []
+2024-11-29T11:27:09.753+0100 [DEBUG] pruneUnusedNodes: module.cloudwatch.output.log_group_arn (expand) is no longer needed, removing
+2024-11-29T11:27:09.753+0100 [DEBUG] pruneUnusedNodes: module.database.output.db_instance_id (expand) is no longer needed, removing
+2024-11-29T11:27:09.753+0100 [DEBUG] pruneUnusedNodes: module.compute.output.alb_security_group_id (expand) is no longer needed, removing
+2024-11-29T11:27:09.754+0100 [DEBUG] pruneUnusedNodes: module.security.output.web_security_group_id (expand) is no longer needed, removing
+2024-11-29T11:27:09.754+0100 [DEBUG] pruneUnusedNodes: module.cloudwatch.output.log_group_name (expand) is no longer needed, removing
+2024-11-29T11:27:09.754+0100 [DEBUG] pruneUnusedNodes: module.database.output.db_instance_arn (expand) is no longer needed, removing
+2024-11-29T11:27:09.766+0100 [INFO]  backend/local: plan operation completed
+2024-11-29T11:27:09.766+0100 [INFO]  backend/local: writing plan output to: plan.binary

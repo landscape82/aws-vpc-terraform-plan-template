@@ -1,0 +1,43 @@
+# Git
+.git
+.gitignore
+
+# Binaries and build files
+main
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Go specific
+*.test
+*.prof
+
+# Local development files
+.env
+.env.local
+*.log
+
+# Docker specific
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Temporary files
+tmp/
+temp/
+
+# Misc
+README.md
+docs/
+scripts/
+.DS_Store
