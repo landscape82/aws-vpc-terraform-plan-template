@@ -6,12 +6,12 @@ Every pull request against `main` that touches `.tf`/`.tfvars` files triggers [`
 |---|---|---|---|
 | Formatting | `terraform fmt -check -recursive` | Yes | Inconsistent indentation/style |
 | Validation | `terraform validate` | Yes | Syntax errors, invalid references, type mismatches |
-| Linting | [TFLint](https://github.com/terraform-linters/tflint) + AWS ruleset | No (advisory) | Naming conventions, undocumented/untyped variables, unused declarations, AWS-provider-specific mistakes |
+| Linting | [TFLint](https://github.com/terraform-linters/tflint) + AWS ruleset | Yes | Naming conventions, undocumented/untyped variables, unused declarations, AWS-provider-specific mistakes |
 | Security scan | [Checkov](https://www.checkov.io/) | No (advisory) | Misconfigurations against CIS/AWS security benchmarks (open security groups, missing encryption, etc.) |
 
-**Why fmt/validate block the PR but tflint/checkov don't (yet):** this is the first CI pass added over code that predates any linting, so tflint and checkov are expected to surface a real backlog of findings on legacy resources. Rather than turning the PR red for pre-existing issues, they run in report-only mode. Once that backlog is triaged, flip `continue-on-error: true` to `false` on those two jobs in the workflow to make them blocking too — that's the standard rollout pattern for introducing a new linter into an existing codebase.
+**Why fmt/validate/tflint block the PR but checkov doesn't (yet):** this CI was added over code that predates any linting, so tflint and checkov initially surfaced a real backlog of findings on legacy resources. Rather than turning the PR red for pre-existing issues, both ran in report-only mode at first. TFLint's backlog (9 missing module version constraints, 1 unused variable) has since been triaged and fixed, so it's now blocking like fmt/validate. Checkov's backlog (43 findings, mostly security/compliance trade-offs) is still open — once triaged, flip its `continue-on-error: true` to `false` in the workflow to make it blocking too, the same way TFLint was promoted. That's the standard rollout pattern for introducing a new linter into an existing codebase: advisory first, blocking once clean.
 
-A final `report` job aggregates all four results into one Markdown table in the run summary, and is the single job worth requiring as a branch protection check if you want PRs blocked on fmt/validate failures.
+A final `report` job aggregates all four results into one Markdown table in the run summary, and is the single job worth requiring as a branch protection check if you want PRs blocked on fmt/validate/tflint failures.
 
 ## Running the same checks locally before pushing
 
