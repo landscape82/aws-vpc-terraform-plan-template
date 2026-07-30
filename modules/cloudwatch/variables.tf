@@ -46,10 +46,10 @@ resource "aws_cloudwatch_metric_alarm" "error_alarm" {
   evaluation_periods  = "2"
   metric_name         = "${var.environment}_${var.application_name}_error_count"
   namespace           = "${var.environment}/${var.application_name}/metrics"
-  period             = "300"
-  statistic          = "Sum"
-  threshold          = "10"
-  alarm_description  = "This metric monitors error count in application logs"
+  period              = "300"
+  statistic           = "Sum"
+  threshold           = "10"
+  alarm_description   = "This metric monitors error count in application logs"
 
   tags = {
     Environment = var.environment

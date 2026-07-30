@@ -51,7 +51,7 @@ resource "aws_internet_gateway" "main" {
 }
 
 resource "aws_eip" "nat" {
-  count = length(var.public_subnet_cidrs)
+  count  = length(var.public_subnet_cidrs)
   domain = "vpc"
 
   tags = {
@@ -120,8 +120,8 @@ resource "aws_vpc_endpoint" "ssmmessages" {
   service_name      = "com.amazonaws.${data.aws_region.current.name}.ssmmessages"
   vpc_endpoint_type = "Interface"
   subnet_ids        = aws_subnet.private[*].id
-  
-  security_group_ids = [aws_security_group.vpce.id]
+
+  security_group_ids  = [aws_security_group.vpce.id]
   private_dns_enabled = true
 }
 
@@ -130,8 +130,8 @@ resource "aws_vpc_endpoint" "ec2messages" {
   service_name      = "com.amazonaws.${data.aws_region.current.name}.ec2messages"
   vpc_endpoint_type = "Interface"
   subnet_ids        = aws_subnet.private[*].id
-  
-  security_group_ids = [aws_security_group.vpce.id]
+
+  security_group_ids  = [aws_security_group.vpce.id]
   private_dns_enabled = true
 }
 # Security group for VPC endpoints
@@ -143,7 +143,7 @@ resource "aws_security_group" "vpce" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [var.vpc_cidr]  # Allow access from entire VPC instead of specific security group
+    cidr_blocks = [var.vpc_cidr] # Allow access from entire VPC instead of specific security group
   }
 
   tags = {

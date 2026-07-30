@@ -176,7 +176,7 @@ resource "aws_launch_template" "web" {
 
   network_interfaces {
     associate_public_ip_address = true
-    security_groups            = [aws_security_group.web.id]
+    security_groups             = [aws_security_group.web.id]
   }
 
   iam_instance_profile {
@@ -188,15 +188,15 @@ resource "aws_launch_template" "web" {
 resource "aws_autoscaling_group" "web" {
   name                = "${var.environment}-web-asg"
   desired_capacity    = var.asg_config.desired_capacity
-  max_size           = var.asg_config.max_size
-  min_size           = var.asg_config.min_size
-  target_group_arns  = [aws_lb_target_group.web.arn]
+  max_size            = var.asg_config.max_size
+  min_size            = var.asg_config.min_size
+  target_group_arns   = [aws_lb_target_group.web.arn]
   vpc_zone_identifier = var.subnet_ids
-  
+
   health_check_type         = var.asg_config.health_check_type
   health_check_grace_period = var.asg_config.health_check_grace_period
-  default_cooldown         = var.asg_config.default_cooldown
-  protect_from_scale_in    = var.asg_config.protect_from_scale_in
+  default_cooldown          = var.asg_config.default_cooldown
+  protect_from_scale_in     = var.asg_config.protect_from_scale_in
 
   launch_template {
     id      = aws_launch_template.web.id
@@ -216,7 +216,7 @@ resource "aws_lb" "web" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb.id]
-  subnets           = var.subnet_ids
+  subnets            = var.subnet_ids
 }
 
 resource "aws_lb_listener" "web" {
@@ -240,11 +240,11 @@ resource "aws_lb_target_group" "web" {
     enabled             = true
     healthy_threshold   = 2
     interval            = 30
-    matcher            = "200"
-    path               = "/"
-    port               = "traffic-port"
-    protocol           = "HTTP"
-    timeout            = 5
+    matcher             = "200"
+    path                = "/"
+    port                = "traffic-port"
+    protocol            = "HTTP"
+    timeout             = 5
     unhealthy_threshold = 2
   }
 }

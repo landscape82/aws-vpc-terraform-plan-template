@@ -38,11 +38,11 @@ variable "database_config" {
   type = object({
     instance_class    = string
     allocated_storage = number
-    engine           = string
-    engine_version   = string
-    database_name    = string
-    username         = string
-    multi_az         = bool
+    engine            = string
+    engine_version    = string
+    database_name     = string
+    username          = string
+    multi_az          = bool
   })
 }
 

@@ -84,18 +84,18 @@ resource "aws_db_instance" "main" {
   vpc_security_group_ids = [aws_security_group.database.id]
   parameter_group_name   = aws_db_parameter_group.main.name
 
-  multi_az               = var.multi_az
-  storage_encrypted      = true
-  kms_key_id            = aws_kms_key.database.arn
-  storage_type          = "gp3"
+  multi_az                = var.multi_az
+  storage_encrypted       = true
+  kms_key_id              = aws_kms_key.database.arn
+  storage_type            = "gp3"
   backup_retention_period = var.backup_retention_period
-  backup_window         = "03:00-04:00"
-  maintenance_window    = "Mon:04:00-Mon:05:00"
+  backup_window           = "03:00-04:00"
+  maintenance_window      = "Mon:04:00-Mon:05:00"
 
   auto_minor_version_upgrade = true
-  deletion_protection       = true
-  skip_final_snapshot      = false
-  final_snapshot_identifier = "${var.environment}-database-final-snapshot"
+  deletion_protection        = true
+  skip_final_snapshot        = false
+  final_snapshot_identifier  = "${var.environment}-database-final-snapshot"
 
   tags = {
     Name        = "${var.environment}-database"
