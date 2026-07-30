@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Full walkthrough for deploying and operating this template. See the main [README](../README.md) for prerequisites and a quick overview.
+Full walkthrough for deploying and operating this template. See the main [README](../README.md) for prerequisites and a quick overview, and [`CI.md`](./CI.md) for the checks that run on every pull request.
 
 ## 1. Initialize and configure
 

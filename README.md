@@ -1,5 +1,7 @@
 # AWS Ops Terraform Template
 
+[![Terraform CI](https://github.com/landscape82/aws-vpc-terraform-plan-template/actions/workflows/terraform-ci.yml/badge.svg)](https://github.com/landscape82/aws-vpc-terraform-plan-template/actions/workflows/terraform-ci.yml)
+
 This is my personal template and learning project for AWS infrastructure operations with Terraform. It provisions a VPC with public/private subnets, an Application Load Balancer in front of an Auto Scaling Group of EC2 instances, an RDS PostgreSQL database, CloudWatch monitoring, and access via AWS Systems Manager instead of direct SSH.
 
 It also includes a bonus Go application (`ip-reverser`) in two variants — a plain version and one that persists results to the provisioned RDS database — used to exercise the infrastructure end to end.
@@ -11,6 +13,7 @@ It also includes a bonus Go application (`ip-reverser`) in two variants — a pl
 - [Prerequisites](#prerequisites)
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
+- [Continuous Integration](#continuous-integration)
 - [Security Notes](#security-notes)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -23,12 +26,17 @@ Traffic enters through the ALB in the public subnets and is distributed to EC2 i
 
 ```
 aws-vpc-terraform-plan-template/
+├── .github/
+│   ├── workflows/
+│   │   └── terraform-ci.yml  # fmt/validate/tflint/checkov on every PR
+│   └── dependabot.yml        # keeps Action versions patched
 ├── app/                 # Go app (ip-reverser) with RDS integration
 ├── app-no-db/           # Go app variant without database connectivity
 ├── archive_logs/        # Example terraform debug output, kept for reference
 ├── assets/               # Screenshots used in docs
 ├── docs/
-│   └── DEPLOYMENT.md     # Full deployment walkthrough
+│   ├── CI.md              # CI workflow explained + external tooling guide
+│   └── DEPLOYMENT.md      # Full deployment walkthrough
 ├── modules/
 │   ├── cloudwatch/       # Log groups + CloudWatch agent config
 │   ├── compute/          # EC2 instances, Auto Scaling Group, SSH key pair
@@ -36,6 +44,7 @@ aws-vpc-terraform-plan-template/
 │   ├── networking/       # VPC, subnets, ALB, NAT Gateway
 │   └── security/         # Security groups
 │                          # (each module follows main.tf / variables.tf / outputs.tf)
+├── .tflint.hcl
 ├── ARCHITECTURE.md
 ├── LICENSE
 ├── README.md
@@ -68,6 +77,10 @@ For the full walkthrough — including accessing instances via SSM, running the 
 ## Configuration
 
 `terraform.tfvars` holds the main configuration: VPC CIDR blocks, instance sizing, RDS settings, and Auto Scaling Group parameters. It ships with a placeholder database password for template purposes — see [Security Notes](#security-notes).
+
+## Continuous Integration
+
+Every pull request against `main` runs `terraform fmt`, `terraform validate`, TFLint, and a Checkov security scan, with results posted to a combined report in the workflow run summary. See [`docs/CI.md`](./docs/CI.md) for what each check does, how to run them locally before pushing, and a list of external tools worth knowing for Terraform development beyond what's wired in here.
 
 ## Security Notes
 
