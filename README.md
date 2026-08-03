@@ -43,7 +43,7 @@ aws-vpc-terraform-plan-template/
 │   ├── database/         # RDS PostgreSQL
 │   ├── networking/       # VPC, subnets, ALB, NAT Gateway
 │   └── security/         # Security groups
-│                          # (each module follows main.tf / variables.tf / outputs.tf)
+│                          # (each module follows main.tf / variables.tf / outputs.tf / versions.tf)
 ├── .tflint.hcl
 ├── ARCHITECTURE.md
 ├── LICENSE

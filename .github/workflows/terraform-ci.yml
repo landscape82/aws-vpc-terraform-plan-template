@@ -84,10 +84,9 @@ jobs:
 
       - name: Run TFLint
         id: tflint
-        # Advisory for now: this is the first CI pass over code that predates
-        # linting. Findings are reported but do not block the PR until the
-        # existing backlog is triaged, then this should become blocking.
-        continue-on-error: true
+        # Blocking: the pre-existing backlog (9 module version-constraint
+        # findings + 1 unused variable) was triaged and fixed, so this is
+        # now held to zero findings going forward.
         run: tflint -f compact --recursive
 
       - name: Write summary
@@ -96,7 +95,7 @@ jobs:
           if [ "${{ steps.tflint.outcome }}" = "success" ]; then
             echo "### ✅ tflint — no issues found" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "### ⚠️ tflint — issues found (advisory, non-blocking), see job logs" >> "$GITHUB_STEP_SUMMARY"
+            echo "### ❌ tflint — issues found, see job logs" >> "$GITHUB_STEP_SUMMARY"
           fi
 
   security-scan:
@@ -144,9 +143,9 @@ jobs:
           echo "|---|---|---|" >> "$GITHUB_STEP_SUMMARY"
           echo "| terraform fmt | ${{ needs.fmt.result }} | yes |" >> "$GITHUB_STEP_SUMMARY"
           echo "| terraform validate | ${{ needs.validate.result }} | yes |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| tflint | ${{ needs.tflint.result }} | no (advisory) |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| tflint | ${{ needs.tflint.result }} | yes |" >> "$GITHUB_STEP_SUMMARY"
           echo "| checkov | ${{ needs.security-scan.result }} | no (advisory) |" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail on blocking checks
-        if: needs.fmt.result == 'failure' || needs.validate.result == 'failure'
+        if: needs.fmt.result == 'failure' || needs.validate.result == 'failure' || needs.tflint.result == 'failure'
         run: exit 1
