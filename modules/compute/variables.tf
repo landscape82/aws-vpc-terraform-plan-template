@@ -9,18 +9,13 @@ variable "instance_type" {
   type        = string
 }
 
-variable "key_name" {
-  description = "Name of SSH key pair"
-  type        = string
-}
-
-variable "subnet_ids" {
+variable "instance_subnet_ids" {
   description = "List of subnet IDs for EC2 instances"
   type        = list(string)
 }
 
-variable "public_subnet_ids" {
-  description = "List of public subnet IDs for bastion host"
+variable "alb_subnet_ids" {
+  description = "List of public subnet IDs for the load balancer"
   type        = list(string)
 }
 

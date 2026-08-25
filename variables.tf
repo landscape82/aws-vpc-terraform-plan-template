@@ -28,11 +28,6 @@ variable "instance_type" {
   type        = string
 }
 
-variable "key_name" {
-  description = "Name of SSH key pair"
-  type        = string
-}
-
 variable "database_config" {
   description = "Database configuration"
   type = object({

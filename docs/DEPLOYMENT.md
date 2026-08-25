@@ -64,7 +64,7 @@ vpc_id = "vpc-0203d1d9413871251"
 
 ## 4. Access the deployed EC2 instances via SSM
 
-No SSH keys required — access is via AWS Systems Manager Session Manager.
+No SSH keys or bastion host required — access is via AWS Systems Manager Session Manager.
 
 Find running instances:
 
