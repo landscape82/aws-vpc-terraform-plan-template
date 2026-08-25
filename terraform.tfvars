@@ -3,8 +3,7 @@ aws_region           = "us-east-1"     # Site
 vpc_cidr             = "10.100.0.0/16" # IPv4 CIDR
 public_subnet_cidrs  = ["10.100.10.0/24", "10.100.20.0/24"]
 private_subnet_cidrs = ["10.100.30.0/24", "10.100.40.0/24"]
-instance_type        = "t3.micro"     # type of provisioned EC2 instance
-key_name             = "deployer-key" # SSH RSA key name
+instance_type        = "t3.micro" # type of provisioned EC2 instance
 
 database_config = {
   instance_class    = "db.t3.micro" # typo of RDS instance

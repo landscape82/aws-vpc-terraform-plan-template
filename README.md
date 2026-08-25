@@ -2,7 +2,7 @@
 
 [![Terraform CI](https://github.com/landscape82/aws-vpc-terraform-plan-template/actions/workflows/terraform-ci.yml/badge.svg)](https://github.com/landscape82/aws-vpc-terraform-plan-template/actions/workflows/terraform-ci.yml)
 
-This is my personal template and learning project for AWS infrastructure operations with Terraform. It provisions a VPC with public/private subnets, an Application Load Balancer in front of an Auto Scaling Group of EC2 instances, an RDS PostgreSQL database, CloudWatch monitoring, and access via AWS Systems Manager instead of direct SSH.
+This is my personal template and learning project for AWS infrastructure operations with Terraform. It provisions a VPC with public/private subnets, an internet-facing Application Load Balancer in front of an Auto Scaling Group of EC2 instances in private subnets, an RDS PostgreSQL database, CloudWatch monitoring, and access via AWS Systems Manager instead of direct SSH.
 
 It also includes a bonus Go application (`ip-reverser`) in two variants — a plain version and one that persists results to the provisioned RDS database — used to exercise the infrastructure end to end.
 
@@ -39,7 +39,7 @@ aws-vpc-terraform-plan-template/
 │   └── DEPLOYMENT.md      # Full deployment walkthrough
 ├── modules/
 │   ├── cloudwatch/       # Log groups + CloudWatch agent config
-│   ├── compute/          # EC2 instances, Auto Scaling Group, SSH key pair
+│   ├── compute/          # EC2 instances, Auto Scaling Group, ALB integration
 │   ├── database/         # RDS PostgreSQL
 │   ├── networking/       # VPC, subnets, ALB, NAT Gateway
 │   └── security/         # Security groups
@@ -85,12 +85,10 @@ Every pull request against `main` runs `terraform fmt`, `terraform validate`, TF
 ## Security Notes
 
 - `terraform.tfvars` in this repo carries a placeholder password for template purposes only. Never commit real credentials; for actual deployments use a git-ignored `.tfvars` file or AWS Secrets Manager.
-- `modules/compute/ssh/deployer-key` and `deployer-key.pub` are intentionally empty placeholder files. Generate your own keypair with `ssh-keygen` if you need SSH/key-pair access.
-- Instance access is designed around AWS SSM Session Manager rather than direct SSH, so no key distribution is required for normal operation.
+- Instance access is designed around AWS SSM Session Manager rather than direct SSH, so no SSH key distribution or bastion host is required for normal operation.
 
 ## Roadmap
 
-- Bastion host module for jump-host access to instances in private subnets (in progress)
 - Dedicated Secrets Manager module instead of passing RDS credentials via `terraform.tfvars`
 
 ## License

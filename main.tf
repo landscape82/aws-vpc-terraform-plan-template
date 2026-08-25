@@ -13,26 +13,16 @@ module "networking" {
   private_subnet_cidrs = var.private_subnet_cidrs
 }
 
-# Reference to `security` module
-module "security" {
-  source = "./modules/security"
-
-  environment                = var.environment
-  vpc_id                     = module.networking.vpc_id
-  database_security_group_id = module.database.db_security_group_id
-}
-
 # Reference to `compute` module
 module "compute" {
   source = "./modules/compute"
 
-  environment       = var.environment
-  instance_type     = var.instance_type
-  key_name          = var.key_name
-  subnet_ids        = module.networking.private_subnet_ids
-  public_subnet_ids = module.networking.public_subnet_ids
-  vpc_id            = module.networking.vpc_id
-  asg_config        = var.asg_config
+  environment         = var.environment
+  instance_type       = var.instance_type
+  instance_subnet_ids = module.networking.private_subnet_ids
+  alb_subnet_ids      = module.networking.public_subnet_ids
+  vpc_id              = module.networking.vpc_id
+  asg_config          = var.asg_config
 
   db_host     = module.database.db_instance_endpoint
   db_port     = 5432

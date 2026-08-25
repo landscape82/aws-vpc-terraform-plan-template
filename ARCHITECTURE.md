@@ -33,7 +33,7 @@ flowchart TB
 - Auto Scaling Group (ASG) of EC2 instances running Docker
 - AWS RDS Database (PostgreSQL)
 - AWS CloudWatch Monitoring (log groups via the CloudWatch agent)
-- Access via AWS Systems Manager Session Manager — no SSH key distribution required
+- Access via AWS Systems Manager Session Manager — no SSH key distribution or bastion host required
 
 ## Network Flow
 

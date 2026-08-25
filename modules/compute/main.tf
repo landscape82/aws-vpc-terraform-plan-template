@@ -91,49 +91,7 @@ resource "aws_security_group" "alb" {
   }
 }
 
-# Security Groups block for Bastion host
-resource "aws_security_group" "bastion" {
-  name_prefix = "${var.environment}-bastion-sg"
-  vpc_id      = var.vpc_id
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name        = "${var.environment}-bastion-sg"
-    Environment = var.environment
-  }
-}
-
-# Bastion to Web EC2s rule - allow ssh from bastion to EC2 (webservers)
-resource "aws_security_group_rule" "allow_ssh_from_bastion" {
-  type                     = "ingress"
-  from_port                = 22
-  to_port                  = 22
-  protocol                 = "tcp"
-  source_security_group_id = aws_security_group.bastion.id
-  security_group_id        = aws_security_group.web.id
-}
-
-# SSH RSA Key 
-resource "aws_key_pair" "deployer" {
-  key_name   = var.key_name
-  public_key = file("${path.module}/ssh/${var.key_name}.pub")
-}
-
 # Config for launching EC2 (template)
-
 resource "aws_launch_template" "web" {
   name_prefix   = "${var.environment}-template"
   image_id      = data.aws_ami.amazon_linux_2.id
@@ -174,10 +132,7 @@ resource "aws_launch_template" "web" {
               EOF
   )
 
-  network_interfaces {
-    associate_public_ip_address = true
-    security_groups             = [aws_security_group.web.id]
-  }
+  vpc_security_group_ids = [aws_security_group.web.id]
 
   iam_instance_profile {
     name = aws_iam_instance_profile.web_profile.name
@@ -191,7 +146,7 @@ resource "aws_autoscaling_group" "web" {
   max_size            = var.asg_config.max_size
   min_size            = var.asg_config.min_size
   target_group_arns   = [aws_lb_target_group.web.arn]
-  vpc_zone_identifier = var.subnet_ids
+  vpc_zone_identifier = var.instance_subnet_ids
 
   health_check_type         = var.asg_config.health_check_type
   health_check_grace_period = var.asg_config.health_check_grace_period
@@ -216,7 +171,7 @@ resource "aws_lb" "web" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb.id]
-  subnets            = var.subnet_ids
+  subnets            = var.alb_subnet_ids
 }
 
 resource "aws_lb_listener" "web" {
@@ -247,23 +202,6 @@ resource "aws_lb_target_group" "web" {
     timeout             = 5
     unhealthy_threshold = 2
   }
-}
-
-# Bastion host template
-resource "aws_instance" "bastion" {
-  ami           = data.aws_ami.amazon_linux_2.id
-  instance_type = "t3.micro"
-  subnet_id     = var.public_subnet_ids[0]
-  key_name      = var.key_name
-
-  vpc_security_group_ids = [aws_security_group.bastion.id]
-
-  tags = {
-    Name        = "${var.environment}-bastion"
-    Environment = var.environment
-  }
-
-  associate_public_ip_address = true
 }
 
 # CloudWatch IAM policy
