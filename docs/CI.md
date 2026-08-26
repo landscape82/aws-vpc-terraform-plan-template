@@ -1,6 +1,15 @@
 # Continuous Integration
 
-Every pull request against `main` that touches `.tf`/`.tfvars` files triggers [`.github/workflows/terraform-ci.yml`](../.github/workflows/terraform-ci.yml), which runs four checks in parallel and posts a combined report to the workflow run's summary page (no AWS credentials required — nothing here plans or applies).
+Pull requests and relevant pushes to `main` trigger focused workflows. No workflow requires AWS credentials; this repository validates configuration and build artifacts but does not plan, apply, publish images, or deploy infrastructure.
+
+| Workflow | Triggered by | Checks |
+|---|---|---|
+| [Terraform CI](../.github/workflows/terraform-ci.yml) | Terraform files, TFLint config, or this workflow | `fmt`, `validate`, TFLint, advisory Checkov, summary |
+| [Go CI](../.github/workflows/go-ci.yml) | Changes under `app/` or `app-no-db/` | `gofmt`, `go vet`, `go test` for both apps |
+| [Docker CI](../.github/workflows/docker-ci.yml) | App, Dockerfile, Compose, or this workflow changes | Builds both application images without pushing |
+| [Documentation CI](../.github/workflows/docs-ci.yml) | Markdown or documentation workflow changes | Markdown lint |
+
+Terraform CI runs four checks in parallel and posts a combined report to the workflow run's summary page.
 
 | Check | Tool | Blocking | What it catches |
 |---|---|---|---|
@@ -26,6 +35,17 @@ tflint --recursive
 
 # Requires: pip install checkov
 checkov -d . --framework terraform --compact
+
+# Go checks
+(cd app && test -z "$(gofmt -l .)" && go vet ./... && go test ./...)
+(cd app-no-db && test -z "$(gofmt -l .)" && go vet ./... && go test ./...)
+
+# Docker image builds
+docker build --pull -t ip-reverser-ci ./app
+docker build --pull -t ip-reverser-no-db-ci ./app-no-db
+
+# Markdown lint (requires Node.js and npm)
+npx --yes markdownlint-cli2 "**/*.md"
 ```
 
 ## Helpful External Tools for Terraform Development
