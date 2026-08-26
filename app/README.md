@@ -35,7 +35,11 @@ To run this application, you need to follow these steps:
 ### 1. Set the Environment Variables (examples)
 
 ```bash
-export DB_SECRET_NAME="secret-name"
+export DB_HOST="127.0.0.1"
+export DB_PORT="5432"
+export DB_USER="myuser"
+export DB_PASSWORD="mypassword"
+export DB_NAME="mydb"
 export PORT="80"  # optional, defaults to 80
 ```
 
@@ -72,14 +76,26 @@ export POSTGRES_DB=mydb
 ```bash
 docker pull postgres
 docker run --name my-postgres -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydb -p 5432:5432 -d postgres # here secrets are passed via cli, if we could forgot to export them earlier
-docker run --rm -e DATABASE_URL="postgres://myuser:mypassword@host.docker.internal:5432/mydb?sslmode=disable" -p 8080:80 my-go-app
+docker run --rm \
+  -e DB_HOST=host.docker.internal \
+  -e DB_PORT=5432 \
+  -e DB_USER=myuser \
+  -e DB_PASSWORD=mypassword \
+  -e DB_NAME=mydb \
+  -p 8080:80 my-go-app
 ```
 
 ### 3. Build and Run the Application
 
 ```bash
 sudo docker build -t ip-reverser .
-docker run --rm -e DATABASE_URL="postgres://myuser:mypassword@host.docker.internal:5432/mydb?sslmode=disable" -p 8080:80 ip-reverser
+docker run --rm \
+  -e DB_HOST=host.docker.internal \
+  -e DB_PORT=5432 \
+  -e DB_USER=myuser \
+  -e DB_PASSWORD=mypassword \
+  -e DB_NAME=mydb \
+  -p 8080:80 ip-reverser
 ```
 
 ### 4. Run with Docker Compose 
@@ -87,10 +103,11 @@ docker run --rm -e DATABASE_URL="postgres://myuser:mypassword@host.docker.intern
 In root directory you can find `docker-compose.yml`, so from that location you can run:
 
 ```bash
+cp .env.example .env
 docker compose up --build -d
 ```
 
-Docker-Compose manifest has hardcoded DB credentials, which should be removed and instead use secret .env file or exported locally environment variables. Docker should automatically deploy both - application and database. I order to delete / cleanup local environment type:
+Docker Compose now expects local values in `.env` or exported shell variables instead of tracked credentials. Docker should automatically deploy both - application and database. I order to delete / cleanup local environment type:
 
 ```bash
 docker compose down

@@ -10,6 +10,28 @@ terraform workspace new Development   # optional, for managing multiple environm
 terraform workspace show
 ```
 
+Copy the example config and keep the real file local-only:
+
+```bash
+cp terraform.tfvars.example terraform.tfvars
+```
+
+Create the runtime database password parameter for the EC2 instances:
+
+```bash
+aws ssm put-parameter \
+  --name /development/ip-reverser/database_password \
+  --type SecureString \
+  --value 'replace-me-with-a-real-password' \
+  --overwrite
+```
+
+Provide the RDS password to Terraform as a sensitive input instead of storing it in the repository:
+
+```bash
+export TF_VAR_database_password='replace-me-with-a-real-password'
+```
+
 ## 2. Validate before applying
 
 ```bash
@@ -141,7 +163,7 @@ See [`app/README.md`](../app/README.md) for the full guide — running with plai
 terraform apply
 ```
 
-**Rotate database credentials:** update `database_password` in `terraform.tfvars` and re-apply. In production, this should go through AWS Secrets Manager instead — see the Roadmap in the main README.
+**Rotate database credentials:** update the SSM parameter value, update `TF_VAR_database_password`, and re-apply. In production, this should move to a dedicated secret-management flow rather than manual dual updates.
 
 **Tear down:**
 
