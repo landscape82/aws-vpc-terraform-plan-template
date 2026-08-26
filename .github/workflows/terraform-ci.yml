@@ -9,6 +9,9 @@ on:
       - ".tflint.hcl"
       - ".github/workflows/terraform-ci.yml"
 
+  push:
+    branches: [main]
+
 permissions:
   contents: read
 
