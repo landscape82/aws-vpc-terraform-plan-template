@@ -28,7 +28,11 @@ Traffic enters through the ALB in the public subnets and is distributed to EC2 i
 aws-vpc-terraform-plan-template/
 ├── .github/
 │   ├── workflows/
-│   │   └── terraform-ci.yml  # fmt/validate/tflint/checkov on every PR
+│   │       ├── terraform-ci.yml       # fmt/validate/tflint/checkov
+│   │       ├── go-ci.yml              # gofmt/vet/test for both apps
+│   │       ├── docker-ci.yml          # build validation for both images
+│   │       ├── docs-ci.yml            # Markdown lint
+│   │       └── docker-release.yml     # Docker Hub publishing on version tags
 │   └── dependabot.yml        # keeps Action versions patched
 ├── app/                 # Go app (ip-reverser) with RDS integration
 ├── app-no-db/           # Go app variant without database connectivity
@@ -81,7 +85,11 @@ For the full walkthrough — including accessing instances via SSM, running the 
 
 ## Continuous Integration
 
-Every pull request against `main` runs `terraform fmt`, `terraform validate`, TFLint, and a Checkov security scan, with results posted to a combined report in the workflow run summary. See [`docs/CI.md`](./docs/CI.md) for what each check does, how to run them locally before pushing, and a list of external tools worth knowing for Terraform development beyond what's wired in here.
+Pull requests and relevant pushes to `main` run Terraform, Go, Docker, and Markdown checks. Docker images are built but not pushed during validation. See [`docs/CI.md`](./docs/CI.md) for the checks, local helper scripts, and Docker Hub release process.
+
+## Release Automation
+
+Push a semantic version tag such as `v1.0.0` to build and publish both application images to Docker Hub. Configure the repository secrets `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` first; release tags and commit-SHA tags are documented in [`docs/CI.md`](./docs/CI.md#docker-hub-releases).
 
 ## Security Notes
 
