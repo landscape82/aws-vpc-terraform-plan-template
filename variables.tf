@@ -47,6 +47,16 @@ variable "database_password" {
   sensitive   = true
 }
 
+variable "database_password_ssm_parameter_name" {
+  description = "Name of the SSM SecureString parameter that instances read at boot for database access"
+  type        = string
+
+  validation {
+    condition     = can(regex("^/.+", var.database_password_ssm_parameter_name))
+    error_message = "database_password_ssm_parameter_name must be an absolute SSM parameter path such as /development/ip-reverser/database_password."
+  }
+}
+
 variable "asg_config" {
   description = "Auto Scaling Group configuration"
   type = object({

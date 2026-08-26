@@ -24,11 +24,12 @@ module "compute" {
   vpc_id              = module.networking.vpc_id
   asg_config          = var.asg_config
 
-  db_host     = module.database.db_instance_endpoint
-  db_port     = 5432
-  db_name     = var.database_config.database_name
-  db_username = var.database_config.username
-  db_password = var.database_password
+  db_host                        = module.database.db_instance_endpoint
+  db_port                        = 5432
+  db_name                        = var.database_config.database_name
+  db_username                    = var.database_config.username
+  aws_region                     = var.aws_region
+  db_password_ssm_parameter_name = var.database_password_ssm_parameter_name
 }
 
 # Reference to `database` module

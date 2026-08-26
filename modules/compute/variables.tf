@@ -24,6 +24,11 @@ variable "vpc_id" {
   type        = string
 }
 
+variable "aws_region" {
+  description = "AWS region used by the instance bootstrap"
+  type        = string
+}
+
 variable "db_host" {
   description = "Database host endpoint"
   type        = string
@@ -45,10 +50,9 @@ variable "db_username" {
   type        = string
 }
 
-variable "db_password" {
-  description = "Database password"
+variable "db_password_ssm_parameter_name" {
+  description = "Name of the SSM SecureString parameter holding the database password"
   type        = string
-  sensitive   = true
 }
 
 variable "asg_config" {
