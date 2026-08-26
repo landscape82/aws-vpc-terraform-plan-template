@@ -64,15 +64,19 @@ func reverseIP(ip string) string {
 	return strings.Join(parts, ".")
 }
 
+func clientIP(r *http.Request) string {
+
+	ip := strings.Split(r.RemoteAddr, ":")[0]
+	if forwarded := r.Header.Get("X-Forwarded-For"); forwarded != "" {
+		ip = strings.TrimSpace(strings.Split(forwarded, ",")[0])
+	}
+	return ip
+}
+
 // Main handler function
 func handleRequest(w http.ResponseWriter, r *http.Request) {
 	// Get incoming IP
-	ip := strings.Split(r.RemoteAddr, ":")[0]
-
-	// If it will be behind LB - use X-Forwarded-For
-	if forwarded := r.Header.Get("X-Forwarded-For"); forwarded != "" {
-		ip = strings.Split(forwarded, ",")[0]
-	}
+	ip := clientIP(r)
 
 	// Reverse IP
 	reversedIP := reverseIP(ip)
