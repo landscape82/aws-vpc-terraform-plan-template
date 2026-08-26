@@ -32,7 +32,7 @@ flowchart TB
 - Application Load Balancer (ALB)
 - Auto Scaling Group (ASG) of EC2 instances running Docker
 - AWS RDS Database (PostgreSQL)
-- AWS CloudWatch Monitoring (log groups via the CloudWatch agent)
+- AWS CloudWatch log group, metric filter, and alarm scaffolding
 - Access via AWS Systems Manager Session Manager — no SSH key distribution or bastion host required
 
 ## Network Flow
@@ -42,6 +42,10 @@ flowchart TB
 3. Instances connect onward to RDS, also in the private subnets
 4. Outbound instance traffic (updates, package installs) routes through the NAT Gateway
 5. Operational access to instances happens via SSM Session Manager, not direct SSH
+
+## Monitoring Note
+
+The current CloudWatch module provisions the destination log group and an example error alarm, but the EC2 bootstrap does not yet install a full agent configuration that ships application logs into that log group automatically.
 
 ## Deployed Infrastructure
 

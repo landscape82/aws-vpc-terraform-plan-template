@@ -13,10 +13,9 @@ The `ip-reverser` is a Go application that provides the following main functiona
 - Secure database connection using password
 - Proper error handling and logging
 
-## Additional Endpoints - handy while developing some API
+## Additional Endpoints
 
 - `/health`: For health checks
-- `/stats`: For usage statistics
 
 ## Infrastructure Integration
 
@@ -24,7 +23,7 @@ The `ip-reverser` is a Go application that provides the following main functiona
 - Configurable via environment variables
 - Supports structured logging
 - By default app create DB table and logs all IP's that are incoming
-- Dockerfile with multi-stage build for more secure and reliable setup (all needed comments are included in `README.md`)
+- Dockerfile with multi-stage build for more secure and reliable setup
 
 ---
 
@@ -46,7 +45,6 @@ export PORT="80"  # optional, defaults to 80
 ### 2. Install the Dependencies
 
 ```bash
-go mod init ip-reverser # run it in app directory
 go mod tidy
 ```
 
@@ -82,6 +80,7 @@ docker run --rm \
   -e DB_USER=myuser \
   -e DB_PASSWORD=mypassword \
   -e DB_NAME=mydb \
+  -e PORT=80 \
   -p 8080:80 my-go-app
 ```
 
@@ -95,6 +94,7 @@ docker run --rm \
   -e DB_USER=myuser \
   -e DB_PASSWORD=mypassword \
   -e DB_NAME=mydb \
+  -e PORT=80 \
   -p 8080:80 ip-reverser
 ```
 
@@ -113,7 +113,17 @@ Docker Compose now expects local values in `.env` or exported shell variables in
 docker compose down
 ```
 
-### 5. Expected result
+### 5. Validate the local workflow
+
+```bash
+docker compose --env-file .env.example config
+docker compose up --build -d
+curl http://localhost/
+curl http://localhost/health
+docker compose down
+```
+
+### 6. Expected result
 
 Check browser or use cli for example curl to get following result:
 

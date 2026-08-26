@@ -2,7 +2,7 @@
 
 [![Terraform CI](https://github.com/landscape82/aws-vpc-terraform-plan-template/actions/workflows/terraform-ci.yml/badge.svg)](https://github.com/landscape82/aws-vpc-terraform-plan-template/actions/workflows/terraform-ci.yml)
 
-This is my personal template and learning project for AWS infrastructure operations with Terraform. It provisions a VPC with public/private subnets, an internet-facing Application Load Balancer in front of an Auto Scaling Group of EC2 instances in private subnets, an RDS PostgreSQL database, CloudWatch monitoring, and access via AWS Systems Manager instead of direct SSH.
+This is my personal template and learning project for AWS infrastructure operations with Terraform. It provisions a VPC with public/private subnets, an internet-facing Application Load Balancer in front of an Auto Scaling Group of EC2 instances in private subnets, an RDS PostgreSQL database, baseline CloudWatch resources, and access via AWS Systems Manager instead of direct SSH.
 
 It also includes a bonus Go application (`ip-reverser`) in two variants — a plain version and one that persists results to the provisioned RDS database — used to exercise the infrastructure end to end.
 
@@ -38,7 +38,7 @@ aws-vpc-terraform-plan-template/
 │   ├── CI.md              # CI workflow explained + external tooling guide
 │   └── DEPLOYMENT.md      # Full deployment walkthrough
 ├── modules/
-│   ├── cloudwatch/       # Log groups + CloudWatch agent config
+│   ├── cloudwatch/       # Log groups, metric filter, and alarm scaffolding
 │   ├── compute/          # EC2 instances, Auto Scaling Group, ALB integration
 │   ├── database/         # RDS PostgreSQL
 │   ├── networking/       # VPC, subnets, ALB, NAT Gateway
@@ -88,6 +88,11 @@ Every pull request against `main` runs `terraform fmt`, `terraform validate`, TF
 - Do not commit `terraform.tfvars`, `.env`, or any other file containing real secrets. This repo now tracks examples only.
 - `database_password` is intended to be provided at apply time as a sensitive Terraform input, while EC2 instances read the runtime password from SSM Parameter Store via `database_password_ssm_parameter_name`.
 - Instance access is designed around AWS SSM Session Manager rather than direct SSH, so no SSH key distribution or bastion host is required for normal operation.
+
+## Known Limitations
+
+- The CloudWatch module currently provisions log groups, a metric filter, and an alarm, but the EC2 bootstrap does not yet configure the CloudWatch agent to ship application logs into that group.
+- The Terraform stack still launches a simple demo container by default; the `ip-reverser` app is exercised separately through the local workflow described in [app/README.md](./app/README.md).
 
 ## Roadmap
 

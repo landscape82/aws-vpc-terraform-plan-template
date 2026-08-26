@@ -155,6 +155,10 @@ The infrastructure above runs a generic demo web container by default. The bonus
 
 See [`app/README.md`](../app/README.md) for the full guide — running with plain Go, with Docker, or with `docker-compose.yml` against RDS. The `app-no-db` variant is a simpler version without database connectivity.
 
+## 6a. CloudWatch expectations
+
+The current CloudWatch module creates a log group, metric filter, and alarm resources, but it does not yet wire the EC2 instances to ship application logs into that log group automatically. Treat it as monitoring scaffolding rather than a complete end-to-end logging setup.
+
 ## 7. Common operations
 
 **Update infrastructure after a config change:**
