@@ -11,6 +11,8 @@ import (
 	"strings"
 )
 
+const defaultPort = "8080"
+
 // Database connection (secrets and network parameters)
 func getDBConnString() string {
 	return fmt.Sprintf(
@@ -125,7 +127,7 @@ func main() {
 	// Start Server
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "80"
+		port = defaultPort
 	}
 
 	log.Printf("Server starting on port %s", port)

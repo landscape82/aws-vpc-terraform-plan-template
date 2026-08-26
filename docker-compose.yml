@@ -4,16 +4,22 @@ services:
       context: ./app
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "${PORT:-8080}:8080"
     environment:
       DB_HOST: ${DB_HOST:-postgres}
       DB_PORT: ${DB_PORT:-5432}
       DB_USER: ${DB_USER:?set DB_USER in .env}
       DB_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
       DB_NAME: ${DB_NAME:?set DB_NAME in .env}
+      PORT: 8080
     depends_on:
       postgres:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://127.0.0.1:8080/health >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     restart: unless-stopped
 
   postgres:
