@@ -3,8 +3,11 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 	"strings"
 )
+
+const defaultPort = "8080"
 
 // App only catches incoming IP's and presents them in reverse order
 func reverseIP(ip string) string {
@@ -23,9 +26,21 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Original IP: %s\nReversed IP: %s", ip, reversedIP)
 }
 
+func healthHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	fmt.Fprint(w, "OK")
+}
+
 // Main handler function with logging
 func main() {
 	http.HandleFunc("/", handler)
-	fmt.Println("Server starting on :80")
-	http.ListenAndServe(":80", nil)
+	http.HandleFunc("/health", healthHandler)
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = defaultPort
+	}
+
+	fmt.Printf("Server starting on :%s\n", port)
+	http.ListenAndServe(":"+port, nil)
 }
