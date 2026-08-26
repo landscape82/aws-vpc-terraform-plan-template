@@ -7,8 +7,8 @@ RUN apk add --no-cache git
 # Set work directory
 WORKDIR /app
 
-# Copy go.mod & go.sum to enable caching
-COPY go.mod go.sum ./
+# Copy go.mod to enable caching
+COPY go.mod ./
 
 # Download dependencies and tidy up module
 RUN go mod tidy
