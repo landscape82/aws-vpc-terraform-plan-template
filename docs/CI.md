@@ -1,6 +1,6 @@
 # Continuous Integration
 
-Pull requests and relevant pushes to `main` trigger focused workflows. No workflow requires AWS credentials; this repository validates configuration and build artifacts but does not plan, apply, publish images, or deploy infrastructure.
+Pull requests and relevant pushes to `main` trigger focused workflows. No validation workflow requires AWS credentials; this repository validates configuration and build artifacts. A separate release workflow publishes Docker images only when a semantic version tag is pushed.
 
 | Workflow | Triggered by | Checks |
 |---|---|---|
@@ -8,6 +8,7 @@ Pull requests and relevant pushes to `main` trigger focused workflows. No workfl
 | [Go CI](../.github/workflows/go-ci.yml) | Changes under `app/` or `app-no-db/` | `gofmt`, `go vet`, `go test` for both apps |
 | [Docker CI](../.github/workflows/docker-ci.yml) | App, Dockerfile, Compose, or this workflow changes | Builds both application images without pushing |
 | [Documentation CI](../.github/workflows/docs-ci.yml) | Markdown or documentation workflow changes | Markdown lint |
+| [Docker Release](../.github/workflows/docker-release.yml) | Semantic version tags such as `v1.0.0` | Builds and publishes both images to Docker Hub |
 
 Terraform CI runs four checks in parallel and posts a combined report to the workflow run's summary page.
 
@@ -44,9 +45,26 @@ checkov -d . --framework terraform --compact
 docker build --pull -t ip-reverser-ci ./app
 docker build --pull -t ip-reverser-no-db-ci ./app-no-db
 
+# Equivalent repository helpers
+./scripts/docker/build-images.sh
+./scripts/docker/smoke-test.sh
+
 # Markdown lint (requires Node.js and npm)
 npx --yes markdownlint-cli2 "**/*.md"
 ```
+
+## Docker Hub releases
+
+The release workflow publishes `ip-reverser` and `ip-reverser-no-db` to Docker Hub when a tag matching `v*.*.*` is pushed. Configure the repository secrets `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` before creating a release. The token should be a Docker Hub access token with permission to push to the target repositories.
+
+Release from a clean, validated commit:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Each image receives a semantic version tag, a major/minor compatibility tag, and a commit-SHA tag. Use the commit-SHA tag for an immutable deployment reference. For local publishing, authenticate with `docker login`, set `DOCKERHUB_USERNAME`, and run `IMAGE_TAG=v1.0.0 ./scripts/docker/publish-images.sh`.
 
 ## Helpful External Tools for Terraform Development
 
