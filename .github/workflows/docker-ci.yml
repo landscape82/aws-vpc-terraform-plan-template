@@ -1,0 +1,44 @@
+name: Docker CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "app-no-db/**"
+      - "docker-compose.yml"
+      - ".github/workflows/docker-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "app-no-db/**"
+      - "docker-compose.yml"
+      - ".github/workflows/docker-ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docker-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Docker build (${{ matrix.directory }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory: [app, app-no-db]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.directory }}
+          push: false
+          pull: true
+          tags: local/${{ matrix.directory }}:${{ github.sha }}
