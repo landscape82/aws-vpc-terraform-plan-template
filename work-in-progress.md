@@ -21,15 +21,15 @@
 
 - [x] Align [app/README.md](./app/README.md) with the actual application environment variables used by [app/main.go](./app/main.go).
 - [x] Remove or implement the documented `/stats` endpoint.
-- [ ] Fix the Docker run examples so they match the app's real configuration model.
+- [x] Fix the Docker run examples so they match the app's real configuration model.
 - [x] Fix [app-no-db/Dockerfile](./app-no-db/Dockerfile) so it does not copy a missing `go.sum`.
 - [x] Remove hardcoded local database credentials from [docker-compose.yml](./docker-compose.yml) and switch to `.env`-based local configuration.
 - [ ] Add basic Go unit tests for the IP reversal and request handling paths in both sample apps.
-- [ ] Make the main Dockerized app buildable, runnable, and ready for repeatable deployment from this repository.
+- [x] Make the main Dockerized app buildable, runnable, and ready for repeatable deployment from this repository.
 - [ ] Review whether the app should remain a demo container consumer in Terraform or become the actual deployed workload.
-- [ ] Improve Dockerfiles for cache efficiency, correctness, and smaller runtime images.
-- [ ] Add container health checks and confirm they align with ALB and local Docker usage.
-- [ ] Decide on a single configuration contract for the app, such as explicit env vars or a DSN, and use it consistently in code, Docker, Compose, and docs.
+- [x] Improve Dockerfiles for cache efficiency, correctness, and smaller runtime images.
+- [x] Add container health checks and confirm they align with ALB and local Docker usage.
+- [x] Decide on a single configuration contract for the app, such as explicit env vars or a DSN, and use it consistently in code, Docker, Compose, and docs.
 - [x] Add a `.env.example` or similar local-development template for app configuration.
 - [ ] Validate the app container locally with `docker build` and a documented smoke test flow.
 
@@ -67,6 +67,7 @@
 - [x] Phase 2 exit checks: confirm no plaintext secrets remain in tracked files, Terraform inputs, Compose files, or user data; rerun Terraform validation and any affected app checks.
 - [x] Phase 3 exit checks: validate CloudWatch-related Terraform, verify local app workflows still run, and confirm documentation examples still match the code.
 - [ ] Phase 4 exit checks: `go test ./...`, `docker build` for both apps, Docker Compose validation, and a documented smoke test for the main app container.
+- [ ] Follow up on Docker image builds and the smoke test once a local Docker daemon is available.
 - [ ] Phase 5 exit checks: verify all workflows pass, confirm new checks trigger on the intended file changes, and ensure local developer instructions match CI behavior.
 
 ## Branch And PR Conventions
@@ -75,7 +76,7 @@
 - [x] Phase 2 branch name: `secret-handling`
 - [x] Create each phase branch from `main` when implementation for that phase starts.
 - [x] Phase 3 branch name: `cw-app-worflows`
-- [ ] Phase 4 branch name: `app-in-docker`
+- [x] Phase 4 branch name: `app-in-docker`
 - [ ] Phase 5 branch name: `ci-qa-unit-tests`
 - [ ] Create each phase branch from `main` when implementation for that phase starts.
 - [ ] Use short, clear commit messages for each commit.

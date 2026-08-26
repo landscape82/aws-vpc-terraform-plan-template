@@ -94,6 +94,11 @@ Every pull request against `main` runs `terraform fmt`, `terraform validate`, TF
 - The CloudWatch module currently provisions log groups, a metric filter, and an alarm, but the EC2 bootstrap does not yet configure the CloudWatch agent to ship application logs into that group.
 - The Terraform stack still launches a simple demo container by default; the `ip-reverser` app is exercised separately through the local workflow described in [app/README.md](./app/README.md).
 
+## App Deployment Notes
+
+- The `ip-reverser` app now defaults to port `8080`, includes a container health check, and runs as a non-root user in Docker.
+- Local container validation uses `docker compose` with `.env.example` as the template for local configuration.
+
 ## Roadmap
 
 - Dedicated Secrets Manager module instead of relying on a manually created SSM parameter plus Terraform-provided RDS password input

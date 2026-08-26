@@ -23,7 +23,7 @@ The `ip-reverser` is a Go application that provides the following main functiona
 - Configurable via environment variables
 - Supports structured logging
 - By default app create DB table and logs all IP's that are incoming
-- Dockerfile with multi-stage build for more secure and reliable setup
+- Dockerfile with multi-stage build, non-root runtime, and a container health check
 
 ---
 
@@ -39,7 +39,7 @@ export DB_PORT="5432"
 export DB_USER="myuser"
 export DB_PASSWORD="mypassword"
 export DB_NAME="mydb"
-export PORT="80"  # optional, defaults to 80
+export PORT="8080"  # optional, defaults to 8080
 ```
 
 ### 2. Install the Dependencies
@@ -80,8 +80,8 @@ docker run --rm \
   -e DB_USER=myuser \
   -e DB_PASSWORD=mypassword \
   -e DB_NAME=mydb \
-  -e PORT=80 \
-  -p 8080:80 my-go-app
+  -e PORT=8080 \
+  -p 8080:8080 ip-reverser
 ```
 
 ### 3. Build and Run the Application
@@ -94,8 +94,8 @@ docker run --rm \
   -e DB_USER=myuser \
   -e DB_PASSWORD=mypassword \
   -e DB_NAME=mydb \
-  -e PORT=80 \
-  -p 8080:80 ip-reverser
+  -e PORT=8080 \
+  -p 8080:8080 ip-reverser
 ```
 
 ### 4. Run with Docker Compose 
@@ -118,8 +118,8 @@ docker compose down
 ```bash
 docker compose --env-file .env.example config
 docker compose up --build -d
-curl http://localhost/
-curl http://localhost/health
+curl http://localhost:8080/
+curl http://localhost:8080/health
 docker compose down
 ```
 
