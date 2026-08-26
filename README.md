@@ -49,9 +49,10 @@ aws-vpc-terraform-plan-template/
 ├── LICENSE
 ├── README.md
 ├── docker-compose.yml
+├── .env.example
 ├── main.tf
 ├── outputs.tf
-├── terraform.tfvars
+├── terraform.tfvars.example
 ├── validate-debug.log    # Example `terraform validate` output, kept for reference
 ├── variables.tf
 └── versions.tf
@@ -76,7 +77,7 @@ For the full walkthrough — including accessing instances via SSM, running the 
 
 ## Configuration
 
-`terraform.tfvars` holds the main configuration: VPC CIDR blocks, instance sizing, RDS settings, and Auto Scaling Group parameters. It ships with a placeholder database password for template purposes — see [Security Notes](#security-notes).
+`terraform.tfvars.example` holds the non-secret example configuration: VPC CIDR blocks, instance sizing, RDS settings, Auto Scaling Group parameters, and the SSM parameter path used by the instances at boot. See [Security Notes](#security-notes) for the secret inputs that must stay local.
 
 ## Continuous Integration
 
@@ -84,12 +85,13 @@ Every pull request against `main` runs `terraform fmt`, `terraform validate`, TF
 
 ## Security Notes
 
-- `terraform.tfvars` in this repo carries a placeholder password for template purposes only. Never commit real credentials; for actual deployments use a git-ignored `.tfvars` file or AWS Secrets Manager.
+- Do not commit `terraform.tfvars`, `.env`, or any other file containing real secrets. This repo now tracks examples only.
+- `database_password` is intended to be provided at apply time as a sensitive Terraform input, while EC2 instances read the runtime password from SSM Parameter Store via `database_password_ssm_parameter_name`.
 - Instance access is designed around AWS SSM Session Manager rather than direct SSH, so no SSH key distribution or bastion host is required for normal operation.
 
 ## Roadmap
 
-- Dedicated Secrets Manager module instead of passing RDS credentials via `terraform.tfvars`
+- Dedicated Secrets Manager module instead of relying on a manually created SSM parameter plus Terraform-provided RDS password input
 
 ## License
 

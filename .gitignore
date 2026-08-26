@@ -21,6 +21,11 @@ terraform.rc
 
 # Ignore transient plan output
 *.tfplan
+terraform.tfvars
+*.auto.tfvars
+*.local.tfvars
+!.terraform.tfvars.example
+!.tfvars.example
 
 # Note: terraform-debug.log, validate-debug.log and archive_logs/ are kept
 # tracked intentionally as training/learning reference material, not ignored.
@@ -37,3 +42,7 @@ id_rsa*
 # Editor
 .vscode/
 .idea/
+
+# Local app and compose secrets
+.env
+.env.local

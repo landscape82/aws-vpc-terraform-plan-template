@@ -14,6 +14,10 @@ data "aws_ami" "amazon_linux_2" {
   }
 }
 
+data "aws_caller_identity" "current" {}
+
+data "aws_partition" "current" {}
+
 # IAM roles and policies definition
 resource "aws_iam_role" "web_role" {
   name = "${var.environment}-web-role"
@@ -40,6 +44,26 @@ resource "aws_iam_instance_profile" "web_profile" {
 resource "aws_iam_role_policy_attachment" "ssm_policy" {
   role       = aws_iam_role.web_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
+
+resource "aws_iam_role_policy" "app_secret_policy" {
+  name = "${var.environment}-app-secret-policy"
+  role = aws_iam_role.web_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "ssm:GetParameter"
+        ]
+        Resource = [
+          "arn:${data.aws_partition.current.partition}:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter${var.db_password_ssm_parameter_name}"
+        ]
+      }
+    ]
+  })
 }
 
 # Security Groups block for ALB
@@ -114,13 +138,21 @@ resource "aws_launch_template" "web" {
               systemctl enable amazon-ssm-agent
               systemctl start amazon-ssm-agent
 
-              # Create environment file for database connection - mapped variable in tfvars
+              # Read the database password from SSM Parameter Store at boot.
+              DB_PASSWORD=$(aws ssm get-parameter \
+                --name '${var.db_password_ssm_parameter_name}' \
+                --with-decryption \
+                --query 'Parameter.Value' \
+                --output text \
+                --region '${var.aws_region}')
+
+              # Create environment file for database connection.
               cat > /etc/docker-environment <<EOL
               DB_HOST=${var.db_host}
               DB_PORT=${var.db_port}
               DB_NAME=${var.db_name}
               DB_USER=${var.db_username}
-              DB_PASSWORD=${var.db_password}
+              DB_PASSWORD=$${DB_PASSWORD}
               EOL
 
               # Pull and run container with env file
